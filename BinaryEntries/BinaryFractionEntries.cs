@@ -3,7 +3,7 @@ using System.IO;
 
 namespace VisualBinaryEditor.BinaryEntries
 {
-    class BinaryFloatEntry : IBinaryEntry
+    internal class BinaryFloatEntry : IBinaryEntry
     {
         public BinaryType Type => BinaryType.Float;
 
@@ -11,7 +11,7 @@ namespace VisualBinaryEditor.BinaryEntries
 
         public void SetValue(in object value)
         {
-            Value = Convert.ToSingle(value);
+            throw new NotImplementedException();
         }
 
         public void Write(in BinaryWriter writer)
@@ -20,7 +20,7 @@ namespace VisualBinaryEditor.BinaryEntries
         }
     }
 
-    class BinaryDoubleEntry : IBinaryEntry
+    internal class BinaryDoubleEntry : IBinaryEntry
     {
         public BinaryType Type => BinaryType.Double;
 
@@ -28,7 +28,7 @@ namespace VisualBinaryEditor.BinaryEntries
 
         public void SetValue(in object value)
         {
-            Value = Convert.ToDouble(value);
+            throw new NotImplementedException();
         }
 
         public void Write(in BinaryWriter writer)
@@ -37,7 +37,7 @@ namespace VisualBinaryEditor.BinaryEntries
         }
     }
 
-    class BinaryDecimalEntry : IBinaryEntry
+    internal class BinaryDecimalEntry : IBinaryEntry
     {
         public BinaryType Type => BinaryType.Decimal;
 
@@ -45,7 +45,7 @@ namespace VisualBinaryEditor.BinaryEntries
 
         public void SetValue(in object value)
         {
-            Value = Convert.ToDecimal(value);
+            throw new NotImplementedException();
         }
 
         public void Write(in BinaryWriter writer)

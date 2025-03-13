@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace VisualBinaryEditor.BinaryEntries
 {
@@ -11,7 +10,7 @@ namespace VisualBinaryEditor.BinaryEntries
 
         public void SetValue(in object value)
         {
-            Value = Convert.ToByte(value);
+            Value = decimal.ToByte((decimal)value);
         }
 
         public void Write(in BinaryWriter writer)
@@ -28,7 +27,7 @@ namespace VisualBinaryEditor.BinaryEntries
 
         public void SetValue(in object value)
         {
-            Value = Convert.ToSByte(value);
+            Value = decimal.ToSByte((decimal)value);
         }
 
         public void Write(in BinaryWriter writer)

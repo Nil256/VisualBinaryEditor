@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace VisualBinaryEditor.BinaryEntries
 {
@@ -11,7 +10,7 @@ namespace VisualBinaryEditor.BinaryEntries
 
         public void SetValue(in object value)
         {
-            Value = Convert.ToBoolean(value);
+            Value = bool.Parse((string)value);
         }
 
         public void Write(in BinaryWriter writer)

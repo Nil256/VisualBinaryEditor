@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace VisualBinaryEditor.BinaryEntries
 {
@@ -11,7 +10,7 @@ namespace VisualBinaryEditor.BinaryEntries
 
         public void SetValue(in object value)
         {
-            Value = Convert.ToInt16(value);
+            Value = decimal.ToInt16((decimal)value);
         }
 
         public void Write(in BinaryWriter writer)
@@ -28,7 +27,7 @@ namespace VisualBinaryEditor.BinaryEntries
 
         public void SetValue(in object value)
         {
-            Value = Convert.ToUInt16(value);
+            Value = decimal.ToUInt16((decimal)value);
         }
 
         public void Write(in BinaryWriter writer)

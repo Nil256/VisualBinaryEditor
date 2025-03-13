@@ -115,6 +115,7 @@ namespace VisualBinaryEditor
             typeLabel.SetAsTypeLabel(binaryEntry.Type);
             valueLabel.SetAsValueLabel();
 
+            valueBox.DropDownStyle = ComboBoxStyle.DropDownList;
             valueBox.FormattingEnabled = true;
             valueBox.Items.Add("false");
             valueBox.Items.Add("true");
@@ -124,6 +125,10 @@ namespace VisualBinaryEditor
             valueBox.SelectedIndex = 0;
             valueBox.Enabled = false;
             // valueBox.Text = "false";
+            valueBox.TextChanged += (_, _) =>
+            {
+                binaryEntry.SetValue(valueBox.Text);
+            };
 
             panel.ResumeLayout(false);
             panel.PerformLayout();
