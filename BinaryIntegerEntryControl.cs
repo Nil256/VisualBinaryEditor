@@ -87,6 +87,8 @@ namespace VisualBinaryEditor
                 nameLabel.ForeColor = textColor;
                 typeLabel.ForeColor = textColor;
                 valueLabel.ForeColor = textColor;
+                nameTextBox.Enabled = _selected;
+                valueBox.Enabled = _selected;
             }
         }
 
@@ -99,20 +101,16 @@ namespace VisualBinaryEditor
                 panel.Click += value;
                 indexLabel.Click += value;
                 nameLabel.Click += value;
-                nameTextBox.Click += value;
                 typeLabel.Click += value;
                 valueLabel.Click += value;
-                valueBox.Click += value;
             }
             remove
             {
                 panel.Click -= value;
                 indexLabel.Click -= value;
                 nameLabel.Click -= value;
-                nameTextBox.Click -= value;
                 typeLabel.Click -= value;
                 valueLabel.Click -= value;
-                valueBox.Click -= value;
             }
         }
 
@@ -131,8 +129,6 @@ namespace VisualBinaryEditor
             valueBox = new NumericUpDown();
             panel.SuspendLayout();
             ((ISupportInitialize)valueBox).BeginInit();
-
-            Click += (_, _) => Selected = !Selected; // 仮置き
 
             parent.Controls.Add(panel);
 
@@ -210,6 +206,7 @@ namespace VisualBinaryEditor
             {
                 binaryEntry.SetValue(valueBox.Value);
             };
+            valueBox.Enabled = false;
 
             panel.ResumeLayout(false);
             panel.PerformLayout();

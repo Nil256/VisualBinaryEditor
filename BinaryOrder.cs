@@ -17,15 +17,7 @@ namespace VisualBinaryEditor
             }
             set
             {
-                if (0 <= _selectedEntryIndex && _selectedEntryIndex < _controls.Count)
-                {
-                    _controls[_selectedEntryIndex].Selected = false;
-                }
-                _selectedEntryIndex = value;
-                if (0 <= _selectedEntryIndex && _selectedEntryIndex < _controls.Count)
-                {
-                    _controls[_selectedEntryIndex].Selected = true;
-                }
+                Select(value);
                 Main.Debug(_selectedEntryIndex.ToString());
             }
         }
@@ -35,6 +27,23 @@ namespace VisualBinaryEditor
             _parentPanel = parent;
             _controls = new List<IBinaryEntryControl>();
             SelectedEntryIndex = -1;
+        }
+
+        private void Select(in int index, bool forced = false)
+        {
+            if (_selectedEntryIndex == index && !forced)
+            {
+                return;
+            }
+            if (0 <= _selectedEntryIndex && _selectedEntryIndex < _controls.Count)
+            {
+                _controls[_selectedEntryIndex].Selected = false;
+            }
+            _selectedEntryIndex = index;
+            if (0 <= _selectedEntryIndex && _selectedEntryIndex < _controls.Count)
+            {
+                _controls[_selectedEntryIndex].Selected = true;
+            }
         }
 
         internal void Add(in BinaryType type)
@@ -83,6 +92,34 @@ namespace VisualBinaryEditor
             _parentPanel.ScrollControlIntoView(control.Control);
         }
 
+        internal void MoveUp()
+        {
+            if (SelectedEntryIndex <= 0)
+            {
+                return;
+            }
+            int swappedIndex = SelectedEntryIndex - 1;
+            IBinaryEntryControl swappedControl = _controls[swappedIndex];
+            _controls[swappedIndex] = _controls[SelectedEntryIndex];
+            _controls[SelectedEntryIndex] = swappedControl;
+            UpdateEntryIndexes();
+            SelectedEntryIndex = swappedIndex;
+        }
+
+        internal void MoveDown()
+        {
+            if (SelectedEntryIndex >= _controls.Count - 1)
+            {
+                return;
+            }
+            int swappedIndex = SelectedEntryIndex + 1;
+            IBinaryEntryControl swappedControl = _controls[swappedIndex];
+            _controls[swappedIndex] = _controls[SelectedEntryIndex];
+            _controls[SelectedEntryIndex] = swappedControl;
+            UpdateEntryIndexes();
+            SelectedEntryIndex = swappedIndex;
+        }
+
         internal void Remove()
         {
             if (SelectedEntryIndex < 0 || _controls.Count <= SelectedEntryIndex)
@@ -92,12 +129,15 @@ namespace VisualBinaryEditor
             IBinaryEntryControl control = _controls[SelectedEntryIndex];
             _controls.Remove(control);
             _parentPanel.Controls.Remove(control.Control);
-            SelectedEntryIndex = _selectedEntryIndex;
-            if (SelectedEntryIndex >= _controls.Count)
+            UpdateEntryIndexes();
+            if (SelectedEntryIndex > _controls.Count - 1)
             {
                 SelectedEntryIndex = _controls.Count - 1;
             }
-            UpdateEntryIndexes();
+            else
+            {
+                Select(_selectedEntryIndex, true);
+            }
         }
 
         private void UpdateEntryIndexes()

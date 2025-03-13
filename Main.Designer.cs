@@ -254,6 +254,7 @@ namespace VisualBinaryEditor
             upButton.TabIndex = 17;
             upButton.Text = "↑";
             upButton.UseVisualStyleBackColor = true;
+            upButton.Click += upButton_Click;
             // 
             // downButton
             // 
@@ -263,6 +264,7 @@ namespace VisualBinaryEditor
             downButton.TabIndex = 18;
             downButton.Text = "↓";
             downButton.UseVisualStyleBackColor = true;
+            downButton.Click += downButton_Click;
             // 
             // deleteLabel
             // 

@@ -78,5 +78,15 @@ namespace VisualBinaryEditor
         {
             order.Remove();
         }
+
+        private void upButton_Click(object sender, EventArgs e)
+        {
+            order.MoveUp();
+        }
+
+        private void downButton_Click(object sender, EventArgs e)
+        {
+            order.MoveDown();
+        }
     }
 }

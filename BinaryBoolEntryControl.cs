@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Reflection;
 using System.Windows.Forms;
 using VisualBinaryEditor.BinaryEntries;
 
@@ -55,6 +54,8 @@ namespace VisualBinaryEditor
                 nameLabel.ForeColor = textColor;
                 typeLabel.ForeColor = textColor;
                 valueLabel.ForeColor = textColor;
+                nameTextBox.Enabled = _selected;
+                valueBox.Enabled = _selected;
             }
         }
 
@@ -67,20 +68,16 @@ namespace VisualBinaryEditor
                 panel.Click += value;
                 indexLabel.Click += value;
                 nameLabel.Click += value;
-                nameTextBox.Click += value;
                 typeLabel.Click += value;
                 valueLabel.Click += value;
-                valueBox.Click += value;
             }
             remove
             {
                 panel.Click -= value;
                 indexLabel.Click -= value;
                 nameLabel.Click -= value;
-                nameTextBox.Click -= value;
                 typeLabel.Click -= value;
                 valueLabel.Click -= value;
-                valueBox.Click -= value;
             }
         }
 
@@ -125,6 +122,7 @@ namespace VisualBinaryEditor
             valueBox.Name = "valueBox";
             valueBox.Size = BinaryEntryControlCreater.ValueBoxSize;
             valueBox.SelectedIndex = 0;
+            valueBox.Enabled = false;
             // valueBox.Text = "false";
 
             panel.ResumeLayout(false);

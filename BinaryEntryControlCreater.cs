@@ -51,6 +51,7 @@ namespace VisualBinaryEditor
             nameTextBox.Location = new Point(120, 10);
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(150, 30);
+            nameTextBox.Enabled = false;
         }
 
         internal static void SetAsTypeLabel(this Label typeLabel, in BinaryType type)
