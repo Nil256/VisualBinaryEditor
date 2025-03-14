@@ -22,6 +22,8 @@ namespace VisualBinaryEditor
         private readonly Label valueLabel;
         private readonly ComboBox valueBox;
 
+        public IBinaryEntry Entry => binaryEntry;
+
         private int _index;
         public int Index
         {

@@ -55,6 +55,8 @@ namespace VisualBinaryEditor
         private readonly NumericUpDown valueBox;
         // private readonly TextBox valueTextBox;
 
+        public IBinaryEntry Entry => binaryEntry;
+
         private int _index;
         public int Index
         {

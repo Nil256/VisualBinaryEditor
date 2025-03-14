@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
+using VisualBinaryEditor.BinaryEntries;
 
 namespace VisualBinaryEditor
 {
@@ -147,6 +149,22 @@ namespace VisualBinaryEditor
             {
                 IBinaryEntryControl control = controls[i];
                 control.Index = i;
+            }
+        }
+
+        internal bool CanExportBinary()
+        {
+            return _controls.Count > 0;
+        }
+
+        internal void ExportBinary(in BinaryWriter writer)
+        {
+            List<IBinaryEntryControl> controls = _controls;
+            for (var i = 0; i < controls.Count; i++)
+            {
+                IBinaryEntryControl control = controls[i];
+                IBinaryEntry entry = control.Entry;
+                entry.Write(writer);
             }
         }
     }

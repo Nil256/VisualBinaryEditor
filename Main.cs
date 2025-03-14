@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -87,6 +88,44 @@ namespace VisualBinaryEditor
         private void downButton_Click(object sender, EventArgs e)
         {
             order.MoveDown();
+        }
+
+        private void fileNewSaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!order.CanExportBinary())
+            {
+                MessageBox.Show("バイナリファイルに出力するには、\nバイナリエントリが最低でも1つ必要です。", "保存するデータがありません", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            DialogResult result = binaryFileSaveDialog.ShowDialog();
+            if (result != DialogResult.OK)
+            {
+                return;
+            }
+            try
+            {
+                using (Stream file = binaryFileSaveDialog.OpenFile())
+                {
+                    using (BinaryWriter writer = new BinaryWriter(file))
+                    {
+                        order.ExportBinary(writer);
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"ファイルの保存中にエラーが発生しました。\n{exception}", "保存に失敗しました", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void fileExitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void helpAboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AboutForm().ShowDialog();
         }
     }
 }
