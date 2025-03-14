@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using VisualBinaryEditor.BinaryEntries;
 
 namespace VisualBinaryEditor
 {

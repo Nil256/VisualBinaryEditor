@@ -131,40 +131,40 @@ namespace VisualBinaryEditor
             // fileNewToolStripMenuItem
             // 
             fileNewToolStripMenuItem.Name = "fileNewToolStripMenuItem";
-            fileNewToolStripMenuItem.Size = new Size(201, 26);
+            fileNewToolStripMenuItem.Size = new Size(224, 26);
             fileNewToolStripMenuItem.Text = "新規作成";
             fileNewToolStripMenuItem.Click += fileNewToolStripMenuItem_Click;
             // 
             // fileOpenToolStripMenuItem
             // 
             fileOpenToolStripMenuItem.Name = "fileOpenToolStripMenuItem";
-            fileOpenToolStripMenuItem.Size = new Size(201, 26);
+            fileOpenToolStripMenuItem.Size = new Size(224, 26);
             fileOpenToolStripMenuItem.Text = "開く";
             fileOpenToolStripMenuItem.Click += fileOpenToolStripMenuItem_Click;
             // 
             // fileSaveToolStripMenuItem
             // 
             fileSaveToolStripMenuItem.Name = "fileSaveToolStripMenuItem";
-            fileSaveToolStripMenuItem.Size = new Size(201, 26);
+            fileSaveToolStripMenuItem.Size = new Size(224, 26);
             fileSaveToolStripMenuItem.Text = "保存";
             fileSaveToolStripMenuItem.Click += fileSaveToolStripMenuItem_Click;
             // 
             // fileNewSaveToolStripMenuItem
             // 
             fileNewSaveToolStripMenuItem.Name = "fileNewSaveToolStripMenuItem";
-            fileNewSaveToolStripMenuItem.Size = new Size(201, 26);
+            fileNewSaveToolStripMenuItem.Size = new Size(224, 26);
             fileNewSaveToolStripMenuItem.Text = "名前を付けて保存";
             fileNewSaveToolStripMenuItem.Click += fileNewSaveToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(198, 6);
+            toolStripSeparator1.Size = new Size(221, 6);
             // 
             // fileExitToolStripMenuItem
             // 
             fileExitToolStripMenuItem.Name = "fileExitToolStripMenuItem";
-            fileExitToolStripMenuItem.Size = new Size(201, 26);
+            fileExitToolStripMenuItem.Size = new Size(224, 26);
             fileExitToolStripMenuItem.Text = "終了";
             fileExitToolStripMenuItem.Click += fileExitToolStripMenuItem_Click;
             // 

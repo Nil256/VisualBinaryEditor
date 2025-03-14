@@ -118,6 +118,7 @@ namespace VisualBinaryEditor
 
         private void fileSaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Focus();
             if (!CanSaveBinaryFile())
             {
                 return;
@@ -132,6 +133,7 @@ namespace VisualBinaryEditor
 
         private void fileNewSaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Focus();
             if (!CanSaveBinaryFile())
             {
                 return;
