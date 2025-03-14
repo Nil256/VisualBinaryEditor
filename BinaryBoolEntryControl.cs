@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using VisualBinaryEditor.BinaryEntries;
 
@@ -13,7 +14,7 @@ namespace VisualBinaryEditor
         }
 
         private readonly Panel _parentPanel;
-        private readonly IBinaryEntry binaryEntry;
+        private readonly BinaryBoolEntry binaryEntry;
         private readonly Panel panel;
         private readonly Label indexLabel;
         private readonly Label nameLabel;
@@ -21,8 +22,6 @@ namespace VisualBinaryEditor
         private readonly Label typeLabel;
         private readonly Label valueLabel;
         private readonly ComboBox valueBox;
-
-        public IBinaryEntry Entry => binaryEntry;
 
         private int _index;
         public int Index
@@ -83,7 +82,7 @@ namespace VisualBinaryEditor
             }
         }
 
-        private BinaryBoolEntryControl(in int index, in Panel parent, in IBinaryEntry entry)
+        private BinaryBoolEntryControl(in int index, in Panel parent, in BinaryBoolEntry entry)
         {
             _index = index;
             _parentPanel = parent;
@@ -134,6 +133,17 @@ namespace VisualBinaryEditor
 
             panel.ResumeLayout(false);
             panel.PerformLayout();
+        }
+
+        public void Read(in BinaryReader reader)
+        {
+            binaryEntry.Read(reader);
+            valueBox.SelectedIndex = binaryEntry.GetValue();
+        }
+
+        public void Write(in BinaryWriter writer)
+        {
+            binaryEntry.Write(writer);
         }
     }
 }

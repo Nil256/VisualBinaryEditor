@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using VisualBinaryEditor.BinaryEntries;
 
@@ -45,7 +46,7 @@ namespace VisualBinaryEditor
         }
 
         private readonly Panel _parentPanel;
-        private readonly IBinaryEntry binaryEntry;
+        private readonly BinaryIntegerEntryBase binaryEntry;
         private readonly Panel panel;
         private readonly Label indexLabel;
         private readonly Label nameLabel;
@@ -54,8 +55,6 @@ namespace VisualBinaryEditor
         private readonly Label valueLabel;
         private readonly NumericUpDown valueBox;
         // private readonly TextBox valueTextBox;
-
-        public IBinaryEntry Entry => binaryEntry;
 
         private int _index;
         public int Index
@@ -116,7 +115,7 @@ namespace VisualBinaryEditor
             }
         }
 
-        private BinaryIntegerEntryControl(in int index, in Panel parent, in IBinaryEntry entry)
+        private BinaryIntegerEntryControl(in int index, in Panel parent, in BinaryIntegerEntryBase entry)
         {
             _index = index;
             _parentPanel = parent;
@@ -213,6 +212,17 @@ namespace VisualBinaryEditor
             panel.ResumeLayout(false);
             panel.PerformLayout();
             ((ISupportInitialize)valueBox).EndInit();
+        }
+
+        public void Read(in BinaryReader reader)
+        {
+            binaryEntry.Read(reader);
+            valueBox.Value = binaryEntry.GetValue();
+        }
+
+        public void Write(in BinaryWriter writer)
+        {
+            binaryEntry.Write(writer);
         }
     }
 }

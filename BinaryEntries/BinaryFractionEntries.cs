@@ -14,6 +14,11 @@ namespace VisualBinaryEditor.BinaryEntries
             throw new NotImplementedException();
         }
 
+        public void Read(in BinaryReader reader)
+        {
+            Value = reader.ReadSingle();
+        }
+
         public void Write(in BinaryWriter writer)
         {
             writer.Write(Value);
@@ -31,6 +36,11 @@ namespace VisualBinaryEditor.BinaryEntries
             throw new NotImplementedException();
         }
 
+        public void Read(in BinaryReader reader)
+        {
+            Value = reader.ReadDouble();
+        }
+
         public void Write(in BinaryWriter writer)
         {
             writer.Write(Value);
@@ -46,6 +56,11 @@ namespace VisualBinaryEditor.BinaryEntries
         public void SetValue(in object value)
         {
             throw new NotImplementedException();
+        }
+
+        public void Read(in BinaryReader reader)
+        {
+            Value = reader.ReadDecimal();
         }
 
         public void Write(in BinaryWriter writer)

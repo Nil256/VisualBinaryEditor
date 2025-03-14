@@ -20,7 +20,6 @@ namespace VisualBinaryEditor
             set
             {
                 Select(value);
-                Main.Debug(_selectedEntryIndex.ToString());
             }
         }
 
@@ -152,6 +151,33 @@ namespace VisualBinaryEditor
             }
         }
 
+        internal void Clear()
+        {
+            List<IBinaryEntryControl> controls = _controls;
+            for (var i = 0; i < controls.Count; i++)
+            {
+                IBinaryEntryControl control = controls[i];
+                _parentPanel.Controls.Remove(control.Control);
+            }
+            _controls.Clear();
+            SelectedEntryIndex = -1;
+        }
+
+        internal bool CanImportBinary()
+        {
+            return _controls.Count > 0;
+        }
+
+        internal void ImportBinary(in BinaryReader reader)
+        {
+            List<IBinaryEntryControl> controls = _controls;
+            for (var i = 0; i < controls.Count; i++)
+            {
+                IBinaryEntryControl control = controls[i];
+                control.Read(reader);
+            }
+        }
+
         internal bool CanExportBinary()
         {
             return _controls.Count > 0;
@@ -163,8 +189,7 @@ namespace VisualBinaryEditor
             for (var i = 0; i < controls.Count; i++)
             {
                 IBinaryEntryControl control = controls[i];
-                IBinaryEntry entry = control.Entry;
-                entry.Write(writer);
+                control.Write(writer);
             }
         }
     }

@@ -2,35 +2,51 @@
 
 namespace VisualBinaryEditor.BinaryEntries
 {
-    internal class BinaryLongEntry : IBinaryEntry
+    internal class BinaryLongEntry : BinaryIntegerEntryBase
     {
-        public BinaryType Type => BinaryType.Long;
+        public override BinaryType Type => BinaryType.Long;
 
         internal long Value { get; set; }
 
-        public void SetValue(in object value)
+        public override decimal GetValue()
         {
-            Value = decimal.ToInt64((decimal)value);
+            return Value;
+        }
+        public override void SetValue(in decimal value)
+        {
+            Value = decimal.ToInt64(value);
         }
 
-        public void Write(in BinaryWriter writer)
+        public override void Read(in BinaryReader reader)
+        {
+            Value = reader.ReadInt64();
+        }
+        public override void Write(in BinaryWriter writer)
         {
             writer.Write(Value);
         }
     }
 
-    internal class BinaryUlongEntry : IBinaryEntry
+    internal class BinaryUlongEntry : BinaryIntegerEntryBase
     {
-        public BinaryType Type => BinaryType.Ulong;
+        public override BinaryType Type => BinaryType.Ulong;
 
         internal ulong Value { get; set; }
 
-        public void SetValue(in object value)
+        public override decimal GetValue()
         {
-            Value = decimal.ToUInt64((decimal)value);
+            return Value;
+        }
+        public override void SetValue(in decimal value)
+        {
+            Value = decimal.ToUInt64(value);
         }
 
-        public void Write(in BinaryWriter writer)
+        public override void Read(in BinaryReader reader)
+        {
+            Value = reader.ReadUInt64();
+        }
+        public override void Write(in BinaryWriter writer)
         {
             writer.Write(Value);
         }

@@ -2,35 +2,51 @@
 
 namespace VisualBinaryEditor.BinaryEntries
 {
-    internal class BinaryShortEntry : IBinaryEntry
+    internal class BinaryShortEntry : BinaryIntegerEntryBase
     {
-        public BinaryType Type => BinaryType.Short;
+        public override BinaryType Type => BinaryType.Short;
 
         internal short Value { get; set; }
 
-        public void SetValue(in object value)
+        public override decimal GetValue()
         {
-            Value = decimal.ToInt16((decimal)value);
+            return Value;
+        }
+        public override void SetValue(in decimal value)
+        {
+            Value = decimal.ToInt16(value);
         }
 
-        public void Write(in BinaryWriter writer)
+        public override void Read(in BinaryReader reader)
+        {
+            Value = reader.ReadInt16();
+        }
+        public override void Write(in BinaryWriter writer)
         {
             writer.Write(Value);
         }
     }
 
-    internal class BinaryUshortEntry : IBinaryEntry
+    internal class BinaryUshortEntry : BinaryIntegerEntryBase
     {
-        public BinaryType Type => BinaryType.Ushort;
+        public override BinaryType Type => BinaryType.Ushort;
 
         internal ushort Value { get; set; }
 
-        public void SetValue(in object value)
+        public override decimal GetValue()
         {
-            Value = decimal.ToUInt16((decimal)value);
+            return Value;
+        }
+        public override void SetValue(in decimal value)
+        {
+            Value = decimal.ToUInt16(value);
         }
 
-        public void Write(in BinaryWriter writer)
+        public override void Read(in BinaryReader reader)
+        {
+            Value = reader.ReadUInt16();
+        }
+        public override void Write(in BinaryWriter writer)
         {
             writer.Write(Value);
         }

@@ -8,11 +8,19 @@ namespace VisualBinaryEditor.BinaryEntries
 
         internal bool Value { get; set; }
 
-        public void SetValue(in object value)
+        public int GetValue()
         {
-            Value = bool.Parse((string)value);
+            return Value ? 1 : 0;
+        }
+        public void SetValue(in string value)
+        {
+            Value = bool.Parse(value);
         }
 
+        public void Read(in BinaryReader reader)
+        {
+            Value = reader.ReadBoolean();
+        }
         public void Write(in BinaryWriter writer)
         {
             writer.Write(Value);

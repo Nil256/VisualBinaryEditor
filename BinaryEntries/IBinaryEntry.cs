@@ -6,8 +6,7 @@ namespace VisualBinaryEditor.BinaryEntries
     {
         public BinaryType Type { get; }
 
-        public void SetValue(in object value);
-
+        public void Read(in BinaryReader reader);
         public void Write(in BinaryWriter writer);
     }
 }

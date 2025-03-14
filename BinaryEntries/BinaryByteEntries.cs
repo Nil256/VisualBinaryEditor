@@ -2,35 +2,51 @@
 
 namespace VisualBinaryEditor.BinaryEntries
 {
-    internal class BinaryByteEntry : IBinaryEntry
+    internal class BinaryByteEntry : BinaryIntegerEntryBase
     {
-        public BinaryType Type => BinaryType.Byte;
+        public override BinaryType Type => BinaryType.Byte;
 
         internal byte Value { get; set; }
 
-        public void SetValue(in object value)
+        public override decimal GetValue()
         {
-            Value = decimal.ToByte((decimal)value);
+            return Value;
+        }
+        public override void SetValue(in decimal value)
+        {
+            Value = decimal.ToByte(value);
         }
 
-        public void Write(in BinaryWriter writer)
+        public override void Read(in BinaryReader reader)
+        {
+            Value = reader.ReadByte();
+        }
+        public override void Write(in BinaryWriter writer)
         {
             writer.Write(Value);
         }
     }
 
-    internal class BinarySbyteEntry : IBinaryEntry
+    internal class BinarySbyteEntry : BinaryIntegerEntryBase
     {
-        public BinaryType Type => BinaryType.Sbyte;
+        public override BinaryType Type => BinaryType.Sbyte;
 
         internal sbyte Value { get; set; }
 
-        public void SetValue(in object value)
+        public override decimal GetValue()
         {
-            Value = decimal.ToSByte((decimal)value);
+            return Value;
+        }
+        public override void SetValue(in decimal value)
+        {
+            Value = decimal.ToSByte(value);
         }
 
-        public void Write(in BinaryWriter writer)
+        public override void Read(in BinaryReader reader)
+        {
+            Value = reader.ReadSByte();
+        }
+        public override void Write(in BinaryWriter writer)
         {
             writer.Write(Value);
         }
