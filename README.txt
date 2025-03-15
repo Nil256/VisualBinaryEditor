@@ -14,7 +14,7 @@ v0.1.0-alpha                             by Nil256
 < 使い方 >
 
 = 起動 =
-Visual Binary Editor.exeから起動できます。
+VisualBinaryEditor.exeから起動できます。
 
 = 画面の見方 =
 左側にある四角い枠: 現在のバイナリの構成(バイナリオーダー)を表しています。
