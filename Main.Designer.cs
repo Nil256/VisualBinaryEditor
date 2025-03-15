@@ -38,6 +38,7 @@ namespace VisualBinaryEditor
             fileToolStripMenuItem = new ToolStripMenuItem();
             fileNewToolStripMenuItem = new ToolStripMenuItem();
             fileOpenToolStripMenuItem = new ToolStripMenuItem();
+            reloadToolStripMenuItem = new ToolStripMenuItem();
             fileSaveToolStripMenuItem = new ToolStripMenuItem();
             fileNewSaveToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
@@ -84,6 +85,7 @@ namespace VisualBinaryEditor
             editingFileNameToolStripStatusLabel = new ToolStripStatusLabel();
             binaryFileSaveDialog = new SaveFileDialog();
             binaryFileOpenDialog = new OpenFileDialog();
+            toolStripSeparator3 = new ToolStripSeparator();
             menuStrip.SuspendLayout();
             statusStrip.SuspendLayout();
             SuspendLayout();
@@ -123,7 +125,7 @@ namespace VisualBinaryEditor
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fileNewToolStripMenuItem, fileOpenToolStripMenuItem, fileSaveToolStripMenuItem, fileNewSaveToolStripMenuItem, toolStripSeparator1, fileExitToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fileNewToolStripMenuItem, fileOpenToolStripMenuItem, reloadToolStripMenuItem, toolStripSeparator3, fileSaveToolStripMenuItem, fileNewSaveToolStripMenuItem, toolStripSeparator1, fileExitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(65, 24);
             fileToolStripMenuItem.Text = "ファイル";
@@ -141,6 +143,14 @@ namespace VisualBinaryEditor
             fileOpenToolStripMenuItem.Size = new Size(201, 26);
             fileOpenToolStripMenuItem.Text = "開く";
             fileOpenToolStripMenuItem.Click += fileOpenToolStripMenuItem_Click;
+            // 
+            // reloadToolStripMenuItem
+            // 
+            reloadToolStripMenuItem.Enabled = false;
+            reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
+            reloadToolStripMenuItem.Size = new Size(201, 26);
+            reloadToolStripMenuItem.Text = "再読み込み";
+            reloadToolStripMenuItem.Click += reloadToolStripMenuItem_Click;
             // 
             // fileSaveToolStripMenuItem
             // 
@@ -513,6 +523,11 @@ namespace VisualBinaryEditor
             binaryFileOpenDialog.Filter = "すべてのファイル|*.*";
             binaryFileOpenDialog.Title = "開く";
             // 
+            // toolStripSeparator3
+            // 
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(198, 6);
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
@@ -610,5 +625,7 @@ namespace VisualBinaryEditor
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem バイナリオーダーの保存ToolStripMenuItem;
         private ToolStripMenuItem バイナリオーダーの保存ToolStripMenuItem1;
+        private ToolStripMenuItem reloadToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator3;
     }
 }

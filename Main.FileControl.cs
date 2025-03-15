@@ -13,6 +13,7 @@ namespace VisualBinaryEditor
             order.Clear();
             editingFile = new EditingFile();
             editingFileNameToolStripStatusLabel.Text = "";
+            reloadToolStripMenuItem.Enabled = false;
         }
 
         private void fileOpenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -27,6 +28,15 @@ namespace VisualBinaryEditor
                 return;
             }
             LoadBinaryFile(binaryFileOpenDialog.FileName);
+        }
+
+        private void reloadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CanLoadBinaryFile())
+            {
+                return;
+            }
+            LoadBinaryFile(editingFile.FilePath);
         }
 
         private void binaryOrderPanel_DragEnter(object sender, DragEventArgs e)
@@ -99,6 +109,7 @@ namespace VisualBinaryEditor
                 MessageBox.Show($"ファイルのデータよりバイナリエントリが多いです。\n現在のバイナリオーダーがファイルのバイナリの構成と異なっている可能性が高いです。", "読み込み終了後にエラーが発生しました", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 editingFile = new EditingFile(filePath);
                 editingFileNameToolStripStatusLabel.Text = Path.GetFileName(filePath);
+                reloadToolStripMenuItem.Enabled = true;
                 return;
             }
             catch (Exception exception)
@@ -106,10 +117,12 @@ namespace VisualBinaryEditor
                 MessageBox.Show($"ファイルの読み込み中にエラーが発生しました。\n{exception}", "読み込みに失敗しました", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 editingFile = new EditingFile();
                 editingFileNameToolStripStatusLabel.Text = "";
+                reloadToolStripMenuItem.Enabled = false;
                 return;
             }
             editingFile = new EditingFile(filePath);
             editingFileNameToolStripStatusLabel.Text = Path.GetFileName(filePath);
+            reloadToolStripMenuItem.Enabled = true;
             if (notEndOfStream)
             {
                 MessageBox.Show($"ファイルのデータよりバイナリエントリが少ないです。\n現在のバイナリオーダーがファイルのバイナリの構成と異なっている可能性があります。", "バイナリの長さの不一致", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -179,6 +192,7 @@ namespace VisualBinaryEditor
             }
             editingFile = new EditingFile(filePath);
             editingFileNameToolStripStatusLabel.Text = Path.GetFileName(filePath);
+            reloadToolStripMenuItem.Enabled = true;
         }
     }
 }
