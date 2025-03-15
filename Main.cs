@@ -39,5 +39,34 @@ namespace VisualBinaryEditor
         {
             new AboutForm().ShowDialog();
         }
+
+        private void helpHowToUseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string readMePath = Application.ExecutablePath;
+            readMePath = Path.GetDirectoryName(readMePath);
+            readMePath = Path.Combine(readMePath, "README.txt");
+            if (!File.Exists(readMePath))
+            {
+                MessageBox.Show("えっ？\nもしかしてREADME.txt消しちゃった！？\nえぇ...参ったなぁ...", "README.txtが見つかりません。", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                DialogResult result = MessageBox.Show("仕方ないからGitHubで開くけどいい？", "README.txtが見つかりません。", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+                ProcessStartInfo info2 = new ProcessStartInfo()
+                {
+                    FileName = "https://github.com/Nil256/VisualBinaryEditor/blob/main/README.txt",
+                    UseShellExecute = true
+                };
+                Process.Start(info2);
+                return;
+            }
+            ProcessStartInfo info = new ProcessStartInfo()
+            {
+                FileName = readMePath,
+                UseShellExecute = true
+            };
+            Process.Start(info);
+        }
     }
 }
