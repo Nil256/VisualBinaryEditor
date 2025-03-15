@@ -24,6 +24,7 @@
 ## ダウンロード
 
 注意: 現在、正式リリース版は無く、まだアルファ版のみリリースされています。
+
 ダウンロードは[Releases](https://github.com/Nil256/VisualBinaryEditor/releases)からできます。
 
 ## 将来的な機能
