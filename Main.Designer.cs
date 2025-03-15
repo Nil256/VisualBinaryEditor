@@ -80,12 +80,12 @@ namespace VisualBinaryEditor
             deleteButton = new Button();
             stringButton = new Button();
             charButton = new Button();
-            statusStrip1 = new StatusStrip();
+            statusStrip = new StatusStrip();
             editingFileNameToolStripStatusLabel = new ToolStripStatusLabel();
             binaryFileSaveDialog = new SaveFileDialog();
             binaryFileOpenDialog = new OpenFileDialog();
             menuStrip.SuspendLayout();
-            statusStrip1.SuspendLayout();
+            statusStrip.SuspendLayout();
             SuspendLayout();
             // 
             // boolButton
@@ -131,40 +131,40 @@ namespace VisualBinaryEditor
             // fileNewToolStripMenuItem
             // 
             fileNewToolStripMenuItem.Name = "fileNewToolStripMenuItem";
-            fileNewToolStripMenuItem.Size = new Size(224, 26);
+            fileNewToolStripMenuItem.Size = new Size(201, 26);
             fileNewToolStripMenuItem.Text = "新規作成";
             fileNewToolStripMenuItem.Click += fileNewToolStripMenuItem_Click;
             // 
             // fileOpenToolStripMenuItem
             // 
             fileOpenToolStripMenuItem.Name = "fileOpenToolStripMenuItem";
-            fileOpenToolStripMenuItem.Size = new Size(224, 26);
+            fileOpenToolStripMenuItem.Size = new Size(201, 26);
             fileOpenToolStripMenuItem.Text = "開く";
             fileOpenToolStripMenuItem.Click += fileOpenToolStripMenuItem_Click;
             // 
             // fileSaveToolStripMenuItem
             // 
             fileSaveToolStripMenuItem.Name = "fileSaveToolStripMenuItem";
-            fileSaveToolStripMenuItem.Size = new Size(224, 26);
+            fileSaveToolStripMenuItem.Size = new Size(201, 26);
             fileSaveToolStripMenuItem.Text = "保存";
             fileSaveToolStripMenuItem.Click += fileSaveToolStripMenuItem_Click;
             // 
             // fileNewSaveToolStripMenuItem
             // 
             fileNewSaveToolStripMenuItem.Name = "fileNewSaveToolStripMenuItem";
-            fileNewSaveToolStripMenuItem.Size = new Size(224, 26);
+            fileNewSaveToolStripMenuItem.Size = new Size(201, 26);
             fileNewSaveToolStripMenuItem.Text = "名前を付けて保存";
             fileNewSaveToolStripMenuItem.Click += fileNewSaveToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(221, 6);
+            toolStripSeparator1.Size = new Size(198, 6);
             // 
             // fileExitToolStripMenuItem
             // 
             fileExitToolStripMenuItem.Name = "fileExitToolStripMenuItem";
-            fileExitToolStripMenuItem.Size = new Size(224, 26);
+            fileExitToolStripMenuItem.Size = new Size(201, 26);
             fileExitToolStripMenuItem.Text = "終了";
             fileExitToolStripMenuItem.Click += fileExitToolStripMenuItem_Click;
             // 
@@ -486,15 +486,15 @@ namespace VisualBinaryEditor
             charButton.Text = "char";
             charButton.UseVisualStyleBackColor = true;
             // 
-            // statusStrip1
+            // statusStrip
             // 
-            statusStrip1.ImageScalingSize = new Size(20, 20);
-            statusStrip1.Items.AddRange(new ToolStripItem[] { editingFileNameToolStripStatusLabel });
-            statusStrip1.Location = new Point(0, 467);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(942, 26);
-            statusStrip1.TabIndex = 23;
-            statusStrip1.Text = "statusStrip1";
+            statusStrip.ImageScalingSize = new Size(20, 20);
+            statusStrip.Items.AddRange(new ToolStripItem[] { editingFileNameToolStripStatusLabel });
+            statusStrip.Location = new Point(0, 467);
+            statusStrip.Name = "statusStrip";
+            statusStrip.Size = new Size(942, 26);
+            statusStrip.TabIndex = 23;
+            statusStrip.Text = "statusStrip1";
             // 
             // editingFileNameToolStripStatusLabel
             // 
@@ -518,7 +518,7 @@ namespace VisualBinaryEditor
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(942, 493);
-            Controls.Add(statusStrip1);
+            Controls.Add(statusStrip);
             Controls.Add(charButton);
             Controls.Add(stringButton);
             Controls.Add(deleteButton);
@@ -550,8 +550,8 @@ namespace VisualBinaryEditor
             Text = "Visual Binary Editor";
             menuStrip.ResumeLayout(false);
             menuStrip.PerformLayout();
-            statusStrip1.ResumeLayout(false);
-            statusStrip1.PerformLayout();
+            statusStrip.ResumeLayout(false);
+            statusStrip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -583,7 +583,7 @@ namespace VisualBinaryEditor
         private ToolStripMenuItem helpToolStripMenuItem;
         private Button stringButton;
         private Button charButton;
-        private StatusStrip statusStrip1;
+        private StatusStrip statusStrip;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripMenuItem fileExitToolStripMenuItem;
         private SaveFileDialog binaryFileSaveDialog;

@@ -40,7 +40,7 @@
             // 
             titleLabel.AutoSize = true;
             titleLabel.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 128);
-            titleLabel.Location = new System.Drawing.Point(138, 15);
+            titleLabel.Location = new System.Drawing.Point(178, 15);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new System.Drawing.Size(187, 28);
             titleLabel.TabIndex = 0;
@@ -49,16 +49,16 @@
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(8, 85);
+            descriptionLabel.Location = new System.Drawing.Point(64, 85);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(446, 46);
+            descriptionLabel.Size = new System.Drawing.Size(414, 69);
             descriptionLabel.TabIndex = 1;
-            descriptionLabel.Text = "System.IO.BinaryWriterによるバイナリファイルの作成を視覚的に\r\n行うことを目的としたソフトウェアです。";
+            descriptionLabel.Text = "System.IO.BinaryReaderとSystem.IO.BinaryWriterによる\r\nバイナリファイルの読み込み, 編集, 生成を\r\n視覚的に行うことを目的としたソフトウェアです。";
             // 
             // versionLabel
             // 
             versionLabel.AutoSize = true;
-            versionLabel.Location = new System.Drawing.Point(180, 43);
+            versionLabel.Location = new System.Drawing.Point(220, 43);
             versionLabel.Name = "versionLabel";
             versionLabel.Size = new System.Drawing.Size(102, 23);
             versionLabel.TabIndex = 2;
@@ -67,7 +67,7 @@
             // gitHubLabel
             // 
             gitHubLabel.AutoSize = true;
-            gitHubLabel.Location = new System.Drawing.Point(20, 140);
+            gitHubLabel.Location = new System.Drawing.Point(60, 180);
             gitHubLabel.Name = "gitHubLabel";
             gitHubLabel.Size = new System.Drawing.Size(68, 23);
             gitHubLabel.TabIndex = 3;
@@ -76,7 +76,7 @@
             // gitHubLinkLabel
             // 
             gitHubLinkLabel.AutoSize = true;
-            gitHubLinkLabel.Location = new System.Drawing.Point(89, 140);
+            gitHubLinkLabel.Location = new System.Drawing.Point(129, 180);
             gitHubLinkLabel.Name = "gitHubLinkLabel";
             gitHubLinkLabel.Size = new System.Drawing.Size(353, 23);
             gitHubLinkLabel.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // closeButton
             // 
-            closeButton.Location = new System.Drawing.Point(187, 181);
+            closeButton.Location = new System.Drawing.Point(227, 226);
             closeButton.Name = "closeButton";
             closeButton.Size = new System.Drawing.Size(88, 30);
             closeButton.TabIndex = 5;
@@ -98,7 +98,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(462, 223);
+            ClientSize = new System.Drawing.Size(542, 268);
             Controls.Add(closeButton);
             Controls.Add(gitHubLinkLabel);
             Controls.Add(gitHubLabel);
