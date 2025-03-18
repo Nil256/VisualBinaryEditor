@@ -96,8 +96,10 @@
             // 
             // AboutForm
             // 
+            AcceptButton = gitHubLinkLabel;
             AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            CancelButton = closeButton;
             ClientSize = new System.Drawing.Size(542, 268);
             Controls.Add(closeButton);
             Controls.Add(gitHubLinkLabel);

@@ -62,6 +62,8 @@ namespace VisualBinaryEditor
             バイナリオーダーの保存ToolStripMenuItem = new ToolStripMenuItem();
             バイナリオーダーの保存ToolStripMenuItem1 = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
+            helpHowToUseToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator4 = new ToolStripSeparator();
             helpCheckUpdateToolStripMenuItem = new ToolStripMenuItem();
             helpAboutToolStripMenuItem = new ToolStripMenuItem();
             addLabel = new Label();
@@ -87,8 +89,6 @@ namespace VisualBinaryEditor
             editingFileNameToolStripStatusLabel = new ToolStripStatusLabel();
             binaryFileSaveDialog = new SaveFileDialog();
             binaryFileOpenDialog = new OpenFileDialog();
-            helpHowToUseToolStripMenuItem = new ToolStripMenuItem();
-            toolStripSeparator4 = new ToolStripSeparator();
             menuStrip.SuspendLayout();
             statusStrip.SuspendLayout();
             SuspendLayout();
@@ -130,74 +130,79 @@ namespace VisualBinaryEditor
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fileNewToolStripMenuItem, fileOpenToolStripMenuItem, fileReloadToolStripMenuItem, toolStripSeparator3, fileSaveToolStripMenuItem, fileNewSaveToolStripMenuItem, toolStripSeparator1, fileExitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(65, 24);
-            fileToolStripMenuItem.Text = "ファイル";
+            fileToolStripMenuItem.Size = new Size(82, 24);
+            fileToolStripMenuItem.Text = "ファイル(&F)";
             // 
             // fileNewToolStripMenuItem
             // 
             fileNewToolStripMenuItem.Name = "fileNewToolStripMenuItem";
-            fileNewToolStripMenuItem.Size = new Size(201, 26);
-            fileNewToolStripMenuItem.Text = "新規作成";
+            fileNewToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.N;
+            fileNewToolStripMenuItem.Size = new Size(311, 26);
+            fileNewToolStripMenuItem.Text = "新規作成(&N)";
             fileNewToolStripMenuItem.Click += fileNewToolStripMenuItem_Click;
             // 
             // fileOpenToolStripMenuItem
             // 
             fileOpenToolStripMenuItem.Name = "fileOpenToolStripMenuItem";
-            fileOpenToolStripMenuItem.Size = new Size(201, 26);
-            fileOpenToolStripMenuItem.Text = "開く";
+            fileOpenToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
+            fileOpenToolStripMenuItem.Size = new Size(311, 26);
+            fileOpenToolStripMenuItem.Text = "開く(&O)";
             fileOpenToolStripMenuItem.Click += fileOpenToolStripMenuItem_Click;
             // 
             // fileReloadToolStripMenuItem
             // 
             fileReloadToolStripMenuItem.Enabled = false;
             fileReloadToolStripMenuItem.Name = "fileReloadToolStripMenuItem";
-            fileReloadToolStripMenuItem.Size = new Size(201, 26);
-            fileReloadToolStripMenuItem.Text = "再読み込み";
+            fileReloadToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.R;
+            fileReloadToolStripMenuItem.Size = new Size(311, 26);
+            fileReloadToolStripMenuItem.Text = "再読み込み(&R)";
             fileReloadToolStripMenuItem.Click += fileReloadToolStripMenuItem_Click;
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(198, 6);
+            toolStripSeparator3.Size = new Size(308, 6);
             // 
             // fileSaveToolStripMenuItem
             // 
             fileSaveToolStripMenuItem.Name = "fileSaveToolStripMenuItem";
-            fileSaveToolStripMenuItem.Size = new Size(201, 26);
-            fileSaveToolStripMenuItem.Text = "保存";
+            fileSaveToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S;
+            fileSaveToolStripMenuItem.Size = new Size(311, 26);
+            fileSaveToolStripMenuItem.Text = "保存(&S)";
             fileSaveToolStripMenuItem.Click += fileSaveToolStripMenuItem_Click;
             // 
             // fileNewSaveToolStripMenuItem
             // 
             fileNewSaveToolStripMenuItem.Name = "fileNewSaveToolStripMenuItem";
-            fileNewSaveToolStripMenuItem.Size = new Size(201, 26);
-            fileNewSaveToolStripMenuItem.Text = "名前を付けて保存";
+            fileNewSaveToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Shift | Keys.S;
+            fileNewSaveToolStripMenuItem.Size = new Size(311, 26);
+            fileNewSaveToolStripMenuItem.Text = "名前を付けて保存(&A)";
             fileNewSaveToolStripMenuItem.Click += fileNewSaveToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(198, 6);
+            toolStripSeparator1.Size = new Size(308, 6);
             // 
             // fileExitToolStripMenuItem
             // 
             fileExitToolStripMenuItem.Name = "fileExitToolStripMenuItem";
-            fileExitToolStripMenuItem.Size = new Size(201, 26);
-            fileExitToolStripMenuItem.Text = "終了";
+            fileExitToolStripMenuItem.Size = new Size(311, 26);
+            fileExitToolStripMenuItem.Text = "終了(&X)";
             fileExitToolStripMenuItem.Click += fileExitToolStripMenuItem_Click;
             // 
             // editToolStripMenuItem
             // 
             editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { editEntryAddToolStripMenuItem, バイナリエントリの移動ToolStripMenuItem, editEntryRemoveToolStripMenuItem, editEntryClearToolStripMenuItem, toolStripSeparator2, バイナリオーダーの保存ToolStripMenuItem, バイナリオーダーの保存ToolStripMenuItem1 });
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(53, 24);
-            editToolStripMenuItem.Text = "編集";
+            editToolStripMenuItem.Size = new Size(71, 24);
+            editToolStripMenuItem.Text = "編集(&E)";
             // 
             // editEntryAddToolStripMenuItem
             // 
             editEntryAddToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { editEntryAddByteToolStripMenuItem, editEntryAddSbyteToolStripMenuItem, editEntryAddShortToolStripMenuItem, editEntryAddUshortToolStripMenuItem, editEntryAddIntToolStripMenuItem, editEntryAddUintToolStripMenuItem, editEntryAddLongToolStripMenuItem, editEntryAddUlongToolStripMenuItem, editEntryAddBoolToolStripMenuItem });
             editEntryAddToolStripMenuItem.Name = "editEntryAddToolStripMenuItem";
-            editEntryAddToolStripMenuItem.Size = new Size(237, 26);
+            editEntryAddToolStripMenuItem.Size = new Size(330, 26);
             editEntryAddToolStripMenuItem.Text = "バイナリエントリの追加";
             // 
             // editEntryAddByteToolStripMenuItem
@@ -267,63 +272,77 @@ namespace VisualBinaryEditor
             // 
             バイナリエントリの移動ToolStripMenuItem.Enabled = false;
             バイナリエントリの移動ToolStripMenuItem.Name = "バイナリエントリの移動ToolStripMenuItem";
-            バイナリエントリの移動ToolStripMenuItem.Size = new Size(237, 26);
+            バイナリエントリの移動ToolStripMenuItem.Size = new Size(330, 26);
             バイナリエントリの移動ToolStripMenuItem.Text = "バイナリエントリの移動";
             // 
             // editEntryRemoveToolStripMenuItem
             // 
             editEntryRemoveToolStripMenuItem.Name = "editEntryRemoveToolStripMenuItem";
-            editEntryRemoveToolStripMenuItem.Size = new Size(237, 26);
+            editEntryRemoveToolStripMenuItem.ShortcutKeys = Keys.Delete;
+            editEntryRemoveToolStripMenuItem.Size = new Size(330, 26);
             editEntryRemoveToolStripMenuItem.Text = "バイナリエントリの削除";
             editEntryRemoveToolStripMenuItem.Click += editEntryRemoveToolStripMenuItem_Click;
             // 
             // editEntryClearToolStripMenuItem
             // 
             editEntryClearToolStripMenuItem.Name = "editEntryClearToolStripMenuItem";
-            editEntryClearToolStripMenuItem.Size = new Size(237, 26);
+            editEntryClearToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.Delete;
+            editEntryClearToolStripMenuItem.Size = new Size(330, 26);
             editEntryClearToolStripMenuItem.Text = "バイナリエントリの全削除";
             editEntryClearToolStripMenuItem.Click += editEntryClearToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(234, 6);
+            toolStripSeparator2.Size = new Size(327, 6);
             // 
             // バイナリオーダーの保存ToolStripMenuItem
             // 
             バイナリオーダーの保存ToolStripMenuItem.Enabled = false;
             バイナリオーダーの保存ToolStripMenuItem.Name = "バイナリオーダーの保存ToolStripMenuItem";
-            バイナリオーダーの保存ToolStripMenuItem.Size = new Size(237, 26);
+            バイナリオーダーの保存ToolStripMenuItem.Size = new Size(330, 26);
             バイナリオーダーの保存ToolStripMenuItem.Text = "バイナリオーダーを開く";
             // 
             // バイナリオーダーの保存ToolStripMenuItem1
             // 
             バイナリオーダーの保存ToolStripMenuItem1.Enabled = false;
             バイナリオーダーの保存ToolStripMenuItem1.Name = "バイナリオーダーの保存ToolStripMenuItem1";
-            バイナリオーダーの保存ToolStripMenuItem1.Size = new Size(237, 26);
+            バイナリオーダーの保存ToolStripMenuItem1.Size = new Size(330, 26);
             バイナリオーダーの保存ToolStripMenuItem1.Text = "バイナリオーダーの保存";
             // 
             // helpToolStripMenuItem
             // 
             helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { helpHowToUseToolStripMenuItem, toolStripSeparator4, helpCheckUpdateToolStripMenuItem, helpAboutToolStripMenuItem });
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(58, 24);
-            helpToolStripMenuItem.Text = "ヘルプ";
+            helpToolStripMenuItem.Size = new Size(79, 24);
+            helpToolStripMenuItem.Text = "ヘルプ(&H)";
+            // 
+            // helpHowToUseToolStripMenuItem
+            // 
+            helpHowToUseToolStripMenuItem.Name = "helpHowToUseToolStripMenuItem";
+            helpHowToUseToolStripMenuItem.Size = new Size(291, 26);
+            helpHowToUseToolStripMenuItem.Text = "使い方を確認(&H)";
+            helpHowToUseToolStripMenuItem.Click += helpHowToUseToolStripMenuItem_Click;
+            // 
+            // toolStripSeparator4
+            // 
+            toolStripSeparator4.Name = "toolStripSeparator4";
+            toolStripSeparator4.Size = new Size(288, 6);
             // 
             // helpCheckUpdateToolStripMenuItem
             // 
             helpCheckUpdateToolStripMenuItem.Image = (Image)resources.GetObject("helpCheckUpdateToolStripMenuItem.Image");
             helpCheckUpdateToolStripMenuItem.Name = "helpCheckUpdateToolStripMenuItem";
-            helpCheckUpdateToolStripMenuItem.Size = new Size(271, 26);
-            helpCheckUpdateToolStripMenuItem.Text = "アップデートを確認";
+            helpCheckUpdateToolStripMenuItem.Size = new Size(291, 26);
+            helpCheckUpdateToolStripMenuItem.Text = "アップデートを確認(&U)";
             helpCheckUpdateToolStripMenuItem.TextImageRelation = TextImageRelation.TextBeforeImage;
             helpCheckUpdateToolStripMenuItem.Click += helpCheckUpdateToolStripMenuItem_Click;
             // 
             // helpAboutToolStripMenuItem
             // 
             helpAboutToolStripMenuItem.Name = "helpAboutToolStripMenuItem";
-            helpAboutToolStripMenuItem.Size = new Size(271, 26);
-            helpAboutToolStripMenuItem.Text = "Visual Binary Editor について";
+            helpAboutToolStripMenuItem.Size = new Size(291, 26);
+            helpAboutToolStripMenuItem.Text = "Visual Binary Editor について(&A)";
             helpAboutToolStripMenuItem.Click += helpAboutToolStripMenuItem_Click;
             // 
             // addLabel
@@ -539,18 +558,6 @@ namespace VisualBinaryEditor
             // 
             binaryFileOpenDialog.Filter = "すべてのファイル|*.*";
             binaryFileOpenDialog.Title = "開く";
-            // 
-            // helpHowToUseToolStripMenuItem
-            // 
-            helpHowToUseToolStripMenuItem.Name = "helpHowToUseToolStripMenuItem";
-            helpHowToUseToolStripMenuItem.Size = new Size(271, 26);
-            helpHowToUseToolStripMenuItem.Text = "使い方を確認";
-            helpHowToUseToolStripMenuItem.Click += helpHowToUseToolStripMenuItem_Click;
-            // 
-            // toolStripSeparator4
-            // 
-            toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(268, 6);
             // 
             // Main
             // 
