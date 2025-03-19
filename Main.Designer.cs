@@ -319,6 +319,7 @@ namespace VisualBinaryEditor
             // 
             // helpHowToUseToolStripMenuItem
             // 
+            helpHowToUseToolStripMenuItem.Image = (Image)resources.GetObject("helpHowToUseToolStripMenuItem.Image");
             helpHowToUseToolStripMenuItem.Name = "helpHowToUseToolStripMenuItem";
             helpHowToUseToolStripMenuItem.Size = new Size(291, 26);
             helpHowToUseToolStripMenuItem.Text = "使い方を確認(&H)";
