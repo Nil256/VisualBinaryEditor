@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VisualBinaryEditor
+namespace VisualBinaryEditor.Update
 {
     public partial class UpdateCheckingDialog : Form
     {
@@ -61,7 +55,7 @@ namespace VisualBinaryEditor
             return;
         }
 
-        private async Task<ReleasedVersions> GetReleasedUpdatesAsync(CancellationToken token)
+        private static async Task<ReleasedVersions> GetReleasedUpdatesAsync(CancellationToken token)
         {
             using (HttpResponseMessage response = await client.GetAsync(URL, token))
             {
@@ -73,7 +67,7 @@ namespace VisualBinaryEditor
             }
         }
 
-        private ReleasedVersions AnalyzeJson(JsonDocument json)
+        private static ReleasedVersions AnalyzeJson(JsonDocument json)
         {
             ReleasedVersions result = new ReleasedVersions();
             JsonElement root = json.RootElement;

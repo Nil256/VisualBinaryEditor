@@ -331,7 +331,6 @@ namespace VisualBinaryEditor
             // 
             // helpCheckUpdateToolStripMenuItem
             // 
-            helpCheckUpdateToolStripMenuItem.Image = (Image)resources.GetObject("helpCheckUpdateToolStripMenuItem.Image");
             helpCheckUpdateToolStripMenuItem.Name = "helpCheckUpdateToolStripMenuItem";
             helpCheckUpdateToolStripMenuItem.Size = new Size(291, 26);
             helpCheckUpdateToolStripMenuItem.Text = "アップデートを確認(&U)";

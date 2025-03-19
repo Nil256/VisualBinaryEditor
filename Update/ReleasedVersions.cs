@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json;
 
-namespace VisualBinaryEditor
+namespace VisualBinaryEditor.Update
 {
     internal class ReleasedVersions
     {
@@ -50,6 +50,12 @@ namespace VisualBinaryEditor
             {
                 _preReleaseVersions.Add(version);
             }
+        }
+
+        internal void Sort()
+        {
+            _officialVersions.Sort();
+            _preReleaseVersions.Sort();
         }
     }
 }

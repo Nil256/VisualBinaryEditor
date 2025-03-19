@@ -7,11 +7,14 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using VisualBinaryEditor.Update;
 
 namespace VisualBinaryEditor
 {
     public partial class Main : Form
     {
+        internal static readonly ReleasedVersion CurrentVersion = new ReleasedVersion("v0.1.0-alpha");
+
         public Main()
         {
             InitializeComponent();
@@ -27,22 +30,7 @@ namespace VisualBinaryEditor
 
         private void helpCheckUpdateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*
-            ProcessStartInfo info = new ProcessStartInfo()
-            {
-                FileName = "https://github.com/Nil256/VisualBinaryEditor/releases",
-                UseShellExecute = true
-            };
-            Process.Start(info);
-            */
-            UpdateCheckingDialog dialog = new UpdateCheckingDialog();
-            DialogResult result = dialog.ShowDialog();
-            if (result != DialogResult.OK)
-            {
-                return;
-            }
-            ReleasedVersions versions = dialog.Versions;
-            editingFileNameToolStripStatusLabel.Text = versions.PreReleaseVersion.Count.ToString();
+            UpdateChecker.CheckUpdate(CurrentVersion);
         }
 
         private void helpAboutToolStripMenuItem_Click(object sender, EventArgs e)

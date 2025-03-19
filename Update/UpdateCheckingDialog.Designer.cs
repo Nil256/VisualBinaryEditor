@@ -1,4 +1,4 @@
-﻿namespace VisualBinaryEditor
+﻿namespace VisualBinaryEditor.Update
 {
     partial class UpdateCheckingDialog
     {
