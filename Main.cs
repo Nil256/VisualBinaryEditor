@@ -13,7 +13,7 @@ namespace VisualBinaryEditor
 {
     public partial class Main : Form
     {
-        internal static readonly ReleasedVersion CurrentVersion = new ReleasedVersion("v0.1.0-alpha");
+        internal static readonly ReleasedVersion CurrentVersion = new ReleasedVersion("v0.1.2-alpha");
 
         public Main()
         {

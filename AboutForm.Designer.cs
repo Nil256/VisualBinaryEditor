@@ -62,7 +62,7 @@
             versionLabel.Name = "versionLabel";
             versionLabel.Size = new System.Drawing.Size(102, 23);
             versionLabel.TabIndex = 2;
-            versionLabel.Text = "v0.1.0-alpha";
+            versionLabel.Text = "v0.1.2-alpha";
             // 
             // gitHubLabel
             // 
