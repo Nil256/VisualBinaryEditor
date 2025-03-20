@@ -66,5 +66,15 @@ namespace VisualBinaryEditor
             };
             Process.Start(info);
         }
+
+        private void helpLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo info = new ProcessStartInfo()
+            {
+                FileName = "https://github.com/Nil256/VisualBinaryEditor/blob/main/LICENSE",
+                UseShellExecute = true
+            };
+            Process.Start(info);
+        }
     }
 }

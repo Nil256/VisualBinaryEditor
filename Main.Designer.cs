@@ -65,6 +65,7 @@ namespace VisualBinaryEditor
             helpHowToUseToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator4 = new ToolStripSeparator();
             helpCheckUpdateToolStripMenuItem = new ToolStripMenuItem();
+            helpLicenseToolStripMenuItem = new ToolStripMenuItem();
             helpAboutToolStripMenuItem = new ToolStripMenuItem();
             addLabel = new Label();
             byteButton = new Button();
@@ -312,7 +313,7 @@ namespace VisualBinaryEditor
             // 
             // helpToolStripMenuItem
             // 
-            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { helpHowToUseToolStripMenuItem, toolStripSeparator4, helpCheckUpdateToolStripMenuItem, helpAboutToolStripMenuItem });
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { helpHowToUseToolStripMenuItem, toolStripSeparator4, helpCheckUpdateToolStripMenuItem, helpLicenseToolStripMenuItem, helpAboutToolStripMenuItem });
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             helpToolStripMenuItem.Size = new Size(79, 24);
             helpToolStripMenuItem.Text = "ヘルプ(&H)";
@@ -337,6 +338,14 @@ namespace VisualBinaryEditor
             helpCheckUpdateToolStripMenuItem.Text = "アップデートを確認(&U)";
             helpCheckUpdateToolStripMenuItem.TextImageRelation = TextImageRelation.TextBeforeImage;
             helpCheckUpdateToolStripMenuItem.Click += helpCheckUpdateToolStripMenuItem_Click;
+            // 
+            // helpLicenseToolStripMenuItem
+            // 
+            helpLicenseToolStripMenuItem.Image = (Image)resources.GetObject("helpLicenseToolStripMenuItem.Image");
+            helpLicenseToolStripMenuItem.Name = "helpLicenseToolStripMenuItem";
+            helpLicenseToolStripMenuItem.Size = new Size(291, 26);
+            helpLicenseToolStripMenuItem.Text = "ソフトウェアライセンスを表示(&L)";
+            helpLicenseToolStripMenuItem.Click += helpLicenseToolStripMenuItem_Click;
             // 
             // helpAboutToolStripMenuItem
             // 
@@ -661,5 +670,6 @@ namespace VisualBinaryEditor
         private ToolStripMenuItem helpCheckUpdateToolStripMenuItem;
         private ToolStripMenuItem helpHowToUseToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator4;
+        private ToolStripMenuItem helpLicenseToolStripMenuItem;
     }
 }
