@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VisualBinaryEditor.Utils;
 
 namespace VisualBinaryEditor.Update
 {
@@ -46,6 +48,27 @@ namespace VisualBinaryEditor.Update
                 Close();
                 return;
             }
+            catch (HttpRequestException httpRequestException)
+            {
+                string log = $"{DateTime.Now} ({DateTime.UtcNow})\nURL\"{URL}\"の取得に失敗しました。\n以下例外のメッセージとスタックトレース:\n{httpRequestException.ToString()}";
+                bool successLogging = Logger.Error(log, out MessageBoxCreater[] failedMessages);
+                string message = $"データの取得ができませんでした。\nHTTPステータス: {(int?)httpRequestException.StatusCode}";
+                if (successLogging)
+                {
+                    message += $"\n詳細は{Logger.GetErrorLogFilePath()}を参照してください。";
+                }
+                MessageBox.Show(message, "GitHubとの通信でエラーが発生しました。", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (!successLogging)
+                {
+                    for (var i = 0; i < failedMessages.Length; i++)
+                    {
+                        failedMessages[i].ShowDialog();
+                    }
+                }
+                DialogResult = DialogResult.Cancel;
+                Close();
+                return;
+            }
             catch
             {
                 throw;
@@ -59,6 +82,7 @@ namespace VisualBinaryEditor.Update
         {
             using (HttpResponseMessage response = await client.GetAsync(URL, token))
             {
+                response.EnsureSuccessStatusCode();
                 string rawJson = await response.Content.ReadAsStringAsync(token);
                 using (JsonDocument json = JsonDocument.Parse(rawJson))
                 {
