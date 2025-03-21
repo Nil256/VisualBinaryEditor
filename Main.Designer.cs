@@ -90,6 +90,8 @@ namespace VisualBinaryEditor
             editingFileNameToolStripStatusLabel = new ToolStripStatusLabel();
             binaryFileSaveDialog = new SaveFileDialog();
             binaryFileOpenDialog = new OpenFileDialog();
+            bottomButton = new Button();
+            topButton = new Button();
             menuStrip.SuspendLayout();
             statusStrip.SuspendLayout();
             SuspendLayout();
@@ -484,21 +486,21 @@ namespace VisualBinaryEditor
             // 
             // upButton
             // 
-            upButton.Location = new Point(732, 353);
+            upButton.Image = (Image)resources.GetObject("upButton.Image");
+            upButton.Location = new Point(788, 353);
             upButton.Name = "upButton";
             upButton.Size = new Size(40, 40);
             upButton.TabIndex = 17;
-            upButton.Text = "↑";
             upButton.UseVisualStyleBackColor = true;
             upButton.Click += upButton_Click;
             // 
             // downButton
             // 
-            downButton.Location = new Point(778, 353);
+            downButton.Image = (Image)resources.GetObject("downButton.Image");
+            downButton.Location = new Point(834, 353);
             downButton.Name = "downButton";
             downButton.Size = new Size(40, 40);
             downButton.TabIndex = 18;
-            downButton.Text = "↓";
             downButton.UseVisualStyleBackColor = true;
             downButton.Click += downButton_Click;
             // 
@@ -568,11 +570,31 @@ namespace VisualBinaryEditor
             binaryFileOpenDialog.Filter = "すべてのファイル|*.*";
             binaryFileOpenDialog.Title = "開く";
             // 
+            // bottomButton
+            // 
+            bottomButton.Image = (Image)resources.GetObject("bottomButton.Image");
+            bottomButton.Location = new Point(880, 353);
+            bottomButton.Name = "bottomButton";
+            bottomButton.Size = new Size(40, 40);
+            bottomButton.TabIndex = 24;
+            bottomButton.UseVisualStyleBackColor = true;
+            // 
+            // topButton
+            // 
+            topButton.Image = (Image)resources.GetObject("topButton.Image");
+            topButton.Location = new Point(742, 353);
+            topButton.Name = "topButton";
+            topButton.Size = new Size(40, 40);
+            topButton.TabIndex = 18;
+            topButton.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(942, 493);
+            Controls.Add(topButton);
+            Controls.Add(bottomButton);
             Controls.Add(statusStrip);
             Controls.Add(charButton);
             Controls.Add(stringButton);
@@ -671,5 +693,7 @@ namespace VisualBinaryEditor
         private ToolStripMenuItem helpHowToUseToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator4;
         private ToolStripMenuItem helpLicenseToolStripMenuItem;
+        private Button bottomButton;
+        private Button topButton;
     }
 }
