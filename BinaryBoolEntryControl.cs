@@ -57,6 +57,11 @@ namespace VisualBinaryEditor
                 valueLabel.ForeColor = textColor;
                 nameTextBox.Enabled = _selected;
                 valueBox.Enabled = _selected;
+                if (!_selected)
+                {
+                    return;
+                }
+                valueBox.Focus();
             }
         }
 
