@@ -51,6 +51,7 @@ namespace VisualBinaryEditor
             nameTextBox.Location = new Point(120, 10);
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(150, 30);
+            nameTextBox.TabIndex = 19;
             nameTextBox.Enabled = false;
         }
 

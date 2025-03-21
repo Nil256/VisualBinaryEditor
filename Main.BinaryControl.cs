@@ -96,18 +96,35 @@ namespace VisualBinaryEditor
         {
             order.MoveToTop();
         }
+        private void editEntryMoveTopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            order.MoveToTop();
+        }
 
         private void upButton_Click(object sender, EventArgs e)
         {
             order.MoveUp();
         }
+        private void editEntryMoveUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            order.MoveUp();
+        }
+
 
         private void downButton_Click(object sender, EventArgs e)
         {
             order.MoveDown();
         }
+        private void editEntryMoveDownToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            order.MoveDown();
+        }
 
         private void bottomButton_Click(object sender, EventArgs e)
+        {
+            order.MoveToBottom();
+        }
+        private void editEntryMoveBottomToolStripMenuItem_Click(object sender, EventArgs e)
         {
             order.MoveToBottom();
         }

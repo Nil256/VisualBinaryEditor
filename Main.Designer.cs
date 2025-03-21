@@ -55,7 +55,11 @@ namespace VisualBinaryEditor
             editEntryAddLongToolStripMenuItem = new ToolStripMenuItem();
             editEntryAddUlongToolStripMenuItem = new ToolStripMenuItem();
             editEntryAddBoolToolStripMenuItem = new ToolStripMenuItem();
-            バイナリエントリの移動ToolStripMenuItem = new ToolStripMenuItem();
+            editEntryMoveToolStripMenuItem = new ToolStripMenuItem();
+            editEntryMoveTopToolStripMenuItem = new ToolStripMenuItem();
+            editEntryMoveUpToolStripMenuItem = new ToolStripMenuItem();
+            editEntryMoveDownToolStripMenuItem = new ToolStripMenuItem();
+            editEntryMoveBottomToolStripMenuItem = new ToolStripMenuItem();
             editEntryRemoveToolStripMenuItem = new ToolStripMenuItem();
             editEntryClearToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator2 = new ToolStripSeparator();
@@ -101,7 +105,7 @@ namespace VisualBinaryEditor
             boolButton.Location = new Point(834, 249);
             boolButton.Name = "boolButton";
             boolButton.Size = new Size(96, 30);
-            boolButton.TabIndex = 0;
+            boolButton.TabIndex = 11;
             boolButton.Text = "bool";
             boolButton.UseVisualStyleBackColor = true;
             boolButton.Click += boolButton_Click;
@@ -196,7 +200,7 @@ namespace VisualBinaryEditor
             // 
             // editToolStripMenuItem
             // 
-            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { editEntryAddToolStripMenuItem, バイナリエントリの移動ToolStripMenuItem, editEntryRemoveToolStripMenuItem, editEntryClearToolStripMenuItem, toolStripSeparator2, バイナリオーダーの保存ToolStripMenuItem, バイナリオーダーの保存ToolStripMenuItem1 });
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { editEntryAddToolStripMenuItem, editEntryMoveToolStripMenuItem, editEntryRemoveToolStripMenuItem, editEntryClearToolStripMenuItem, toolStripSeparator2, バイナリオーダーの保存ToolStripMenuItem, バイナリオーダーの保存ToolStripMenuItem1 });
             editToolStripMenuItem.Name = "editToolStripMenuItem";
             editToolStripMenuItem.Size = new Size(71, 24);
             editToolStripMenuItem.Text = "編集(&E)";
@@ -211,72 +215,100 @@ namespace VisualBinaryEditor
             // editEntryAddByteToolStripMenuItem
             // 
             editEntryAddByteToolStripMenuItem.Name = "editEntryAddByteToolStripMenuItem";
-            editEntryAddByteToolStripMenuItem.Size = new Size(133, 26);
+            editEntryAddByteToolStripMenuItem.Size = new Size(224, 26);
             editEntryAddByteToolStripMenuItem.Text = "byte";
             editEntryAddByteToolStripMenuItem.Click += editEntryAddByteToolStripMenuItem_Click;
             // 
             // editEntryAddSbyteToolStripMenuItem
             // 
             editEntryAddSbyteToolStripMenuItem.Name = "editEntryAddSbyteToolStripMenuItem";
-            editEntryAddSbyteToolStripMenuItem.Size = new Size(133, 26);
+            editEntryAddSbyteToolStripMenuItem.Size = new Size(224, 26);
             editEntryAddSbyteToolStripMenuItem.Text = "sbyte";
             editEntryAddSbyteToolStripMenuItem.Click += editEntryAddSbyteToolStripMenuItem_Click;
             // 
             // editEntryAddShortToolStripMenuItem
             // 
             editEntryAddShortToolStripMenuItem.Name = "editEntryAddShortToolStripMenuItem";
-            editEntryAddShortToolStripMenuItem.Size = new Size(133, 26);
+            editEntryAddShortToolStripMenuItem.Size = new Size(224, 26);
             editEntryAddShortToolStripMenuItem.Text = "short";
             editEntryAddShortToolStripMenuItem.Click += editEntryAddShortToolStripMenuItem_Click;
             // 
             // editEntryAddUshortToolStripMenuItem
             // 
             editEntryAddUshortToolStripMenuItem.Name = "editEntryAddUshortToolStripMenuItem";
-            editEntryAddUshortToolStripMenuItem.Size = new Size(133, 26);
+            editEntryAddUshortToolStripMenuItem.Size = new Size(224, 26);
             editEntryAddUshortToolStripMenuItem.Text = "ushort";
             editEntryAddUshortToolStripMenuItem.Click += editEntryAddUshortToolStripMenuItem_Click;
             // 
             // editEntryAddIntToolStripMenuItem
             // 
             editEntryAddIntToolStripMenuItem.Name = "editEntryAddIntToolStripMenuItem";
-            editEntryAddIntToolStripMenuItem.Size = new Size(133, 26);
+            editEntryAddIntToolStripMenuItem.Size = new Size(224, 26);
             editEntryAddIntToolStripMenuItem.Text = "int";
             editEntryAddIntToolStripMenuItem.Click += editEntryAddIntToolStripMenuItem_Click;
             // 
             // editEntryAddUintToolStripMenuItem
             // 
             editEntryAddUintToolStripMenuItem.Name = "editEntryAddUintToolStripMenuItem";
-            editEntryAddUintToolStripMenuItem.Size = new Size(133, 26);
+            editEntryAddUintToolStripMenuItem.Size = new Size(224, 26);
             editEntryAddUintToolStripMenuItem.Text = "uint";
             editEntryAddUintToolStripMenuItem.Click += editEntryAddUintToolStripMenuItem_Click;
             // 
             // editEntryAddLongToolStripMenuItem
             // 
             editEntryAddLongToolStripMenuItem.Name = "editEntryAddLongToolStripMenuItem";
-            editEntryAddLongToolStripMenuItem.Size = new Size(133, 26);
+            editEntryAddLongToolStripMenuItem.Size = new Size(224, 26);
             editEntryAddLongToolStripMenuItem.Text = "long";
             editEntryAddLongToolStripMenuItem.Click += editEntryAddLongToolStripMenuItem_Click;
             // 
             // editEntryAddUlongToolStripMenuItem
             // 
             editEntryAddUlongToolStripMenuItem.Name = "editEntryAddUlongToolStripMenuItem";
-            editEntryAddUlongToolStripMenuItem.Size = new Size(133, 26);
+            editEntryAddUlongToolStripMenuItem.Size = new Size(224, 26);
             editEntryAddUlongToolStripMenuItem.Text = "ulong";
             editEntryAddUlongToolStripMenuItem.Click += editEntryAddUlongToolStripMenuItem_Click;
             // 
             // editEntryAddBoolToolStripMenuItem
             // 
             editEntryAddBoolToolStripMenuItem.Name = "editEntryAddBoolToolStripMenuItem";
-            editEntryAddBoolToolStripMenuItem.Size = new Size(133, 26);
+            editEntryAddBoolToolStripMenuItem.Size = new Size(224, 26);
             editEntryAddBoolToolStripMenuItem.Text = "bool";
             editEntryAddBoolToolStripMenuItem.Click += editEntryAddBoolToolStripMenuItem_Click;
             // 
-            // バイナリエントリの移動ToolStripMenuItem
+            // editEntryMoveToolStripMenuItem
             // 
-            バイナリエントリの移動ToolStripMenuItem.Enabled = false;
-            バイナリエントリの移動ToolStripMenuItem.Name = "バイナリエントリの移動ToolStripMenuItem";
-            バイナリエントリの移動ToolStripMenuItem.Size = new Size(330, 26);
-            バイナリエントリの移動ToolStripMenuItem.Text = "バイナリエントリの移動";
+            editEntryMoveToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { editEntryMoveTopToolStripMenuItem, editEntryMoveUpToolStripMenuItem, editEntryMoveDownToolStripMenuItem, editEntryMoveBottomToolStripMenuItem });
+            editEntryMoveToolStripMenuItem.Name = "editEntryMoveToolStripMenuItem";
+            editEntryMoveToolStripMenuItem.Size = new Size(330, 26);
+            editEntryMoveToolStripMenuItem.Text = "バイナリエントリの移動(&M)";
+            // 
+            // editEntryMoveTopToolStripMenuItem
+            // 
+            editEntryMoveTopToolStripMenuItem.Name = "editEntryMoveTopToolStripMenuItem";
+            editEntryMoveTopToolStripMenuItem.Size = new Size(224, 26);
+            editEntryMoveTopToolStripMenuItem.Text = "一番上に移動(&T)";
+            editEntryMoveTopToolStripMenuItem.Click += editEntryMoveTopToolStripMenuItem_Click;
+            // 
+            // editEntryMoveUpToolStripMenuItem
+            // 
+            editEntryMoveUpToolStripMenuItem.Name = "editEntryMoveUpToolStripMenuItem";
+            editEntryMoveUpToolStripMenuItem.Size = new Size(224, 26);
+            editEntryMoveUpToolStripMenuItem.Text = "上に移動(&U)";
+            editEntryMoveUpToolStripMenuItem.Click += editEntryMoveUpToolStripMenuItem_Click;
+            // 
+            // editEntryMoveDownToolStripMenuItem
+            // 
+            editEntryMoveDownToolStripMenuItem.Name = "editEntryMoveDownToolStripMenuItem";
+            editEntryMoveDownToolStripMenuItem.Size = new Size(224, 26);
+            editEntryMoveDownToolStripMenuItem.Text = "下に移動(&D)";
+            editEntryMoveDownToolStripMenuItem.Click += editEntryMoveDownToolStripMenuItem_Click;
+            // 
+            // editEntryMoveBottomToolStripMenuItem
+            // 
+            editEntryMoveBottomToolStripMenuItem.Name = "editEntryMoveBottomToolStripMenuItem";
+            editEntryMoveBottomToolStripMenuItem.Size = new Size(224, 26);
+            editEntryMoveBottomToolStripMenuItem.Text = "一番下に移動(&B)";
+            editEntryMoveBottomToolStripMenuItem.Click += editEntryMoveBottomToolStripMenuItem_Click;
             // 
             // editEntryRemoveToolStripMenuItem
             // 
@@ -370,7 +402,7 @@ namespace VisualBinaryEditor
             byteButton.Location = new Point(732, 69);
             byteButton.Name = "byteButton";
             byteButton.Size = new Size(96, 30);
-            byteButton.TabIndex = 5;
+            byteButton.TabIndex = 0;
             byteButton.Text = "byte";
             byteButton.UseVisualStyleBackColor = true;
             byteButton.Click += byteButton_Click;
@@ -380,7 +412,7 @@ namespace VisualBinaryEditor
             sbyteButton.Location = new Point(834, 69);
             sbyteButton.Name = "sbyteButton";
             sbyteButton.Size = new Size(96, 30);
-            sbyteButton.TabIndex = 6;
+            sbyteButton.TabIndex = 1;
             sbyteButton.Text = "sbyte";
             sbyteButton.UseVisualStyleBackColor = true;
             sbyteButton.Click += sbyteButton_Click;
@@ -390,7 +422,7 @@ namespace VisualBinaryEditor
             shortButton.Location = new Point(732, 105);
             shortButton.Name = "shortButton";
             shortButton.Size = new Size(96, 30);
-            shortButton.TabIndex = 7;
+            shortButton.TabIndex = 2;
             shortButton.Text = "short";
             shortButton.UseVisualStyleBackColor = true;
             shortButton.Click += shortButton_Click;
@@ -400,7 +432,7 @@ namespace VisualBinaryEditor
             ushortButton.Location = new Point(834, 105);
             ushortButton.Name = "ushortButton";
             ushortButton.Size = new Size(96, 30);
-            ushortButton.TabIndex = 8;
+            ushortButton.TabIndex = 3;
             ushortButton.Text = "ushort";
             ushortButton.UseVisualStyleBackColor = true;
             ushortButton.Click += ushortButton_Click;
@@ -410,7 +442,7 @@ namespace VisualBinaryEditor
             intButton.Location = new Point(732, 141);
             intButton.Name = "intButton";
             intButton.Size = new Size(96, 30);
-            intButton.TabIndex = 9;
+            intButton.TabIndex = 4;
             intButton.Text = "int";
             intButton.UseVisualStyleBackColor = true;
             intButton.Click += intButton_Click;
@@ -420,7 +452,7 @@ namespace VisualBinaryEditor
             uintButton.Location = new Point(834, 141);
             uintButton.Name = "uintButton";
             uintButton.Size = new Size(96, 30);
-            uintButton.TabIndex = 10;
+            uintButton.TabIndex = 5;
             uintButton.Text = "uint";
             uintButton.UseVisualStyleBackColor = true;
             uintButton.Click += uintButton_Click;
@@ -430,7 +462,7 @@ namespace VisualBinaryEditor
             longButton.Location = new Point(732, 177);
             longButton.Name = "longButton";
             longButton.Size = new Size(96, 30);
-            longButton.TabIndex = 11;
+            longButton.TabIndex = 6;
             longButton.Text = "long";
             longButton.UseVisualStyleBackColor = true;
             longButton.Click += longButton_Click;
@@ -440,7 +472,7 @@ namespace VisualBinaryEditor
             ulongButton.Location = new Point(834, 177);
             ulongButton.Name = "ulongButton";
             ulongButton.Size = new Size(96, 30);
-            ulongButton.TabIndex = 12;
+            ulongButton.TabIndex = 7;
             ulongButton.Text = "ulong";
             ulongButton.UseVisualStyleBackColor = true;
             ulongButton.Click += ulongButton_Click;
@@ -451,7 +483,7 @@ namespace VisualBinaryEditor
             floatButton.Location = new Point(732, 213);
             floatButton.Name = "floatButton";
             floatButton.Size = new Size(96, 30);
-            floatButton.TabIndex = 13;
+            floatButton.TabIndex = 8;
             floatButton.Text = "float";
             floatButton.UseVisualStyleBackColor = true;
             // 
@@ -461,7 +493,7 @@ namespace VisualBinaryEditor
             doubleButton.Location = new Point(834, 213);
             doubleButton.Name = "doubleButton";
             doubleButton.Size = new Size(96, 30);
-            doubleButton.TabIndex = 14;
+            doubleButton.TabIndex = 9;
             doubleButton.Text = "double";
             doubleButton.UseVisualStyleBackColor = true;
             // 
@@ -471,7 +503,7 @@ namespace VisualBinaryEditor
             decimalButton.Location = new Point(732, 249);
             decimalButton.Name = "decimalButton";
             decimalButton.Size = new Size(96, 30);
-            decimalButton.TabIndex = 15;
+            decimalButton.TabIndex = 10;
             decimalButton.Text = "decimal";
             decimalButton.UseVisualStyleBackColor = true;
             // 
@@ -490,7 +522,7 @@ namespace VisualBinaryEditor
             upButton.Location = new Point(788, 353);
             upButton.Name = "upButton";
             upButton.Size = new Size(40, 40);
-            upButton.TabIndex = 17;
+            upButton.TabIndex = 15;
             upButton.UseVisualStyleBackColor = true;
             upButton.Click += upButton_Click;
             // 
@@ -500,7 +532,7 @@ namespace VisualBinaryEditor
             downButton.Location = new Point(834, 353);
             downButton.Name = "downButton";
             downButton.Size = new Size(40, 40);
-            downButton.TabIndex = 18;
+            downButton.TabIndex = 16;
             downButton.UseVisualStyleBackColor = true;
             downButton.Click += downButton_Click;
             // 
@@ -518,7 +550,7 @@ namespace VisualBinaryEditor
             deleteButton.Location = new Point(732, 432);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(96, 30);
-            deleteButton.TabIndex = 20;
+            deleteButton.TabIndex = 18;
             deleteButton.Text = "削除";
             deleteButton.UseVisualStyleBackColor = true;
             deleteButton.Click += deleteButton_Click;
@@ -529,7 +561,7 @@ namespace VisualBinaryEditor
             stringButton.Location = new Point(834, 285);
             stringButton.Name = "stringButton";
             stringButton.Size = new Size(96, 30);
-            stringButton.TabIndex = 21;
+            stringButton.TabIndex = 13;
             stringButton.Text = "string";
             stringButton.UseVisualStyleBackColor = true;
             // 
@@ -539,7 +571,7 @@ namespace VisualBinaryEditor
             charButton.Location = new Point(732, 285);
             charButton.Name = "charButton";
             charButton.Size = new Size(96, 30);
-            charButton.TabIndex = 22;
+            charButton.TabIndex = 12;
             charButton.Text = "char";
             charButton.UseVisualStyleBackColor = true;
             // 
@@ -576,7 +608,7 @@ namespace VisualBinaryEditor
             bottomButton.Location = new Point(880, 353);
             bottomButton.Name = "bottomButton";
             bottomButton.Size = new Size(40, 40);
-            bottomButton.TabIndex = 24;
+            bottomButton.TabIndex = 17;
             bottomButton.UseVisualStyleBackColor = true;
             bottomButton.Click += bottomButton_Click;
             // 
@@ -586,7 +618,7 @@ namespace VisualBinaryEditor
             topButton.Location = new Point(742, 353);
             topButton.Name = "topButton";
             topButton.Size = new Size(40, 40);
-            topButton.TabIndex = 18;
+            topButton.TabIndex = 14;
             topButton.UseVisualStyleBackColor = true;
             topButton.Click += topButton_Click;
             // 
@@ -685,7 +717,7 @@ namespace VisualBinaryEditor
         private ToolStripMenuItem editEntryAddBoolToolStripMenuItem;
         private ToolStripMenuItem editEntryRemoveToolStripMenuItem;
         private ToolStripMenuItem editEntryClearToolStripMenuItem;
-        private ToolStripMenuItem バイナリエントリの移動ToolStripMenuItem;
+        private ToolStripMenuItem editEntryMoveToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem バイナリオーダーの保存ToolStripMenuItem;
         private ToolStripMenuItem バイナリオーダーの保存ToolStripMenuItem1;
@@ -697,5 +729,9 @@ namespace VisualBinaryEditor
         private ToolStripMenuItem helpLicenseToolStripMenuItem;
         private Button bottomButton;
         private Button topButton;
+        private ToolStripMenuItem editEntryMoveTopToolStripMenuItem;
+        private ToolStripMenuItem editEntryMoveUpToolStripMenuItem;
+        private ToolStripMenuItem editEntryMoveDownToolStripMenuItem;
+        private ToolStripMenuItem editEntryMoveBottomToolStripMenuItem;
     }
 }

@@ -128,6 +128,7 @@ namespace VisualBinaryEditor
             valueBox.Location = new Point(460, 10);
             valueBox.Name = "valueBox";
             valueBox.Size = BinaryEntryControlCreater.ValueBoxSize;
+            valueBox.TabIndex = 20;
             valueBox.SelectedIndex = 0;
             valueBox.Enabled = false;
             // valueBox.Text = "false";
