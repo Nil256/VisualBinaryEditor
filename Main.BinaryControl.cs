@@ -92,6 +92,11 @@ namespace VisualBinaryEditor
         }
 
 
+        private void topButton_Click(object sender, EventArgs e)
+        {
+            order.MoveToTop();
+        }
+
         private void upButton_Click(object sender, EventArgs e)
         {
             order.MoveUp();
@@ -100,6 +105,11 @@ namespace VisualBinaryEditor
         private void downButton_Click(object sender, EventArgs e)
         {
             order.MoveDown();
+        }
+
+        private void bottomButton_Click(object sender, EventArgs e)
+        {
+            order.MoveToBottom();
         }
 
 

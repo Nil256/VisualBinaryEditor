@@ -43,6 +43,7 @@ namespace VisualBinaryEditor
             if (0 <= _selectedEntryIndex && _selectedEntryIndex < _controls.Count)
             {
                 _controls[_selectedEntryIndex].Selected = true;
+                _parentPanel.ScrollControlIntoView(_controls[_selectedEntryIndex].Control);
             }
         }
 
@@ -92,18 +93,29 @@ namespace VisualBinaryEditor
             _parentPanel.ScrollControlIntoView(control.Control);
         }
 
+        internal void MoveToTop()
+        {
+            if (SelectedEntryIndex <= 0)
+            {
+                return;
+            }
+            IBinaryEntryControl selectedControl = _controls[SelectedEntryIndex];
+            for (var i = SelectedEntryIndex - 1; i >= 0; i--)
+            {
+                _controls[i + 1] = _controls[i];
+            }
+            _controls[0] = selectedControl;
+            UpdateEntryIndexes();
+            SelectedEntryIndex = 0;
+        }
+
         internal void MoveUp()
         {
             if (SelectedEntryIndex <= 0)
             {
                 return;
             }
-            int swappedIndex = SelectedEntryIndex - 1;
-            IBinaryEntryControl swappedControl = _controls[swappedIndex];
-            _controls[swappedIndex] = _controls[SelectedEntryIndex];
-            _controls[SelectedEntryIndex] = swappedControl;
-            UpdateEntryIndexes();
-            SelectedEntryIndex = swappedIndex;
+            SelectedEntryIndex = SwapEntries(SelectedEntryIndex - 1);
         }
 
         internal void MoveDown()
@@ -112,12 +124,33 @@ namespace VisualBinaryEditor
             {
                 return;
             }
-            int swappedIndex = SelectedEntryIndex + 1;
-            IBinaryEntryControl swappedControl = _controls[swappedIndex];
-            _controls[swappedIndex] = _controls[SelectedEntryIndex];
+            SelectedEntryIndex = SwapEntries(SelectedEntryIndex + 1);
+        }
+
+        internal void MoveToBottom()
+        {
+            if (SelectedEntryIndex >= _controls.Count - 1)
+            {
+                return;
+            }
+            // SelectedEntryIndex = SwapEntries(_controls.Count - 1);
+            IBinaryEntryControl selectedControl = _controls[SelectedEntryIndex];
+            for (var i = SelectedEntryIndex; i < _controls.Count - 1; i++)
+            {
+                _controls[i] = _controls[i + 1];
+            }
+            _controls[_controls.Count - 1] = selectedControl;
+            UpdateEntryIndexes();
+            SelectedEntryIndex = _controls.Count - 1;
+        }
+
+        private int SwapEntries(int targetIndex)
+        {
+            IBinaryEntryControl swappedControl = _controls[targetIndex];
+            _controls[targetIndex] = _controls[SelectedEntryIndex];
             _controls[SelectedEntryIndex] = swappedControl;
             UpdateEntryIndexes();
-            SelectedEntryIndex = swappedIndex;
+            return targetIndex;
         }
 
         internal void Remove()

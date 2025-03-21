@@ -578,6 +578,7 @@ namespace VisualBinaryEditor
             bottomButton.Size = new Size(40, 40);
             bottomButton.TabIndex = 24;
             bottomButton.UseVisualStyleBackColor = true;
+            bottomButton.Click += bottomButton_Click;
             // 
             // topButton
             // 
@@ -587,6 +588,7 @@ namespace VisualBinaryEditor
             topButton.Size = new Size(40, 40);
             topButton.TabIndex = 18;
             topButton.UseVisualStyleBackColor = true;
+            topButton.Click += topButton_Click;
             // 
             // Main
             // 
