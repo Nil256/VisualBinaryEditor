@@ -209,8 +209,8 @@ namespace VisualBinaryEditor
             // 
             editEntryAddToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { editEntryAddByteToolStripMenuItem, editEntryAddSbyteToolStripMenuItem, editEntryAddShortToolStripMenuItem, editEntryAddUshortToolStripMenuItem, editEntryAddIntToolStripMenuItem, editEntryAddUintToolStripMenuItem, editEntryAddLongToolStripMenuItem, editEntryAddUlongToolStripMenuItem, editEntryAddBoolToolStripMenuItem });
             editEntryAddToolStripMenuItem.Name = "editEntryAddToolStripMenuItem";
-            editEntryAddToolStripMenuItem.Size = new Size(330, 26);
-            editEntryAddToolStripMenuItem.Text = "バイナリエントリの追加";
+            editEntryAddToolStripMenuItem.Size = new Size(349, 26);
+            editEntryAddToolStripMenuItem.Text = "バイナリエントリの追加(&A)";
             // 
             // editEntryAddByteToolStripMenuItem
             // 
@@ -279,7 +279,7 @@ namespace VisualBinaryEditor
             // 
             editEntryMoveToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { editEntryMoveTopToolStripMenuItem, editEntryMoveUpToolStripMenuItem, editEntryMoveDownToolStripMenuItem, editEntryMoveBottomToolStripMenuItem });
             editEntryMoveToolStripMenuItem.Name = "editEntryMoveToolStripMenuItem";
-            editEntryMoveToolStripMenuItem.Size = new Size(330, 26);
+            editEntryMoveToolStripMenuItem.Size = new Size(349, 26);
             editEntryMoveToolStripMenuItem.Text = "バイナリエントリの移動(&M)";
             // 
             // editEntryMoveTopToolStripMenuItem
@@ -314,36 +314,36 @@ namespace VisualBinaryEditor
             // 
             editEntryRemoveToolStripMenuItem.Name = "editEntryRemoveToolStripMenuItem";
             editEntryRemoveToolStripMenuItem.ShortcutKeys = Keys.Delete;
-            editEntryRemoveToolStripMenuItem.Size = new Size(330, 26);
-            editEntryRemoveToolStripMenuItem.Text = "バイナリエントリの削除";
+            editEntryRemoveToolStripMenuItem.Size = new Size(349, 26);
+            editEntryRemoveToolStripMenuItem.Text = "バイナリエントリの削除(&D)";
             editEntryRemoveToolStripMenuItem.Click += editEntryRemoveToolStripMenuItem_Click;
             // 
             // editEntryClearToolStripMenuItem
             // 
             editEntryClearToolStripMenuItem.Name = "editEntryClearToolStripMenuItem";
             editEntryClearToolStripMenuItem.ShortcutKeys = Keys.Shift | Keys.Delete;
-            editEntryClearToolStripMenuItem.Size = new Size(330, 26);
-            editEntryClearToolStripMenuItem.Text = "バイナリエントリの全削除";
+            editEntryClearToolStripMenuItem.Size = new Size(349, 26);
+            editEntryClearToolStripMenuItem.Text = "バイナリエントリの全削除(&C)";
             editEntryClearToolStripMenuItem.Click += editEntryClearToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(327, 6);
+            toolStripSeparator2.Size = new Size(346, 6);
             // 
             // バイナリオーダーの保存ToolStripMenuItem
             // 
             バイナリオーダーの保存ToolStripMenuItem.Enabled = false;
             バイナリオーダーの保存ToolStripMenuItem.Name = "バイナリオーダーの保存ToolStripMenuItem";
-            バイナリオーダーの保存ToolStripMenuItem.Size = new Size(330, 26);
-            バイナリオーダーの保存ToolStripMenuItem.Text = "バイナリオーダーを開く";
+            バイナリオーダーの保存ToolStripMenuItem.Size = new Size(349, 26);
+            バイナリオーダーの保存ToolStripMenuItem.Text = "バイナリオーダーを開く(&O)";
             // 
             // バイナリオーダーの保存ToolStripMenuItem1
             // 
             バイナリオーダーの保存ToolStripMenuItem1.Enabled = false;
             バイナリオーダーの保存ToolStripMenuItem1.Name = "バイナリオーダーの保存ToolStripMenuItem1";
-            バイナリオーダーの保存ToolStripMenuItem1.Size = new Size(330, 26);
-            バイナリオーダーの保存ToolStripMenuItem1.Text = "バイナリオーダーの保存";
+            バイナリオーダーの保存ToolStripMenuItem1.Size = new Size(349, 26);
+            バイナリオーダーの保存ToolStripMenuItem1.Text = "バイナリオーダーの保存(&S)";
             // 
             // helpToolStripMenuItem
             // 
