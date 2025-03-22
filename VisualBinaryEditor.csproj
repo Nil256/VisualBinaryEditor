@@ -42,4 +42,9 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Help\images\" />
+    <Folder Include="Help\css\" />
+  </ItemGroup>
+
 </Project>
