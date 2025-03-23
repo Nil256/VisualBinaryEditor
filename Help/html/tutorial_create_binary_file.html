@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/style.css">
+	<title>Visual Binary Editor 説明書 - バイナリファイルの作成</title>
+</head>
+<body>
+	<header>
+		<h1>
+			<img class="icon" src="../images/icon256.png" alt="Visual Binary Editorのアイコン">
+			Visual Binary Editor
+		</h1>
+	</header>
+	<nav>
+		<h5>目次</h5>
+		<ul>
+			<li>
+				<details>
+					<summary>
+						<a href="../index.html">Visual Binary Editorへようこそ</a>
+					</summary>
+					<ul>
+						<li><a href="how_to_read.html">画面の見方</a></li>
+					</ul>
+				</details>
+			</li>
+			<li>
+				<details open>
+					<summary>
+						<a href="tutorial.html">チュートリアル</a>
+					</summary>
+					<ul>
+						<li><b>バイナリファイルの作成</b></li>
+						<li><a href="tutorial_open_binary_file.html">バイナリファイルの読み込み</a></li>
+					</ul>
+				</details>
+			</li>
+		</ul>
+	</nav>
+	<main>
+		<h2>チュートリアル: バイナリファイルの作成</h2>
+		<p>
+			まず、以下のようなプログラムを実行して生成できるバイナリファイルを作成します。
+		</p>
+		<div class="code-block">
+			<pre class="code">
+				<code>
+byte saveFileVersion = 1;
+bool isCompleted = false;
+int stageID = 3;
+ulong totalScore = 17500;
+
+// ...
+
+using (BinaryWriter writer = new BinaryWriter(fileStream))
+{
+	writer.Write(saveFileVersion);
+	writer.Write(isCompleted);
+	writer.Write(stageID);
+	writer.Write(totalScore);
+}
+				</code>
+			</pre>
+		</div>
+		<p>
+			Visual Binary Editorを起動し、右側の操作盤から<code class="inline">byte</code>, <code class="inline">bool</code>, <code class="inline">int</code>, <code class="inline">ulong</code>の順にボタンを押します。
+		</p>
+		<div class="tip">
+			<p class="tip-title">
+				💡ヒント
+			</p>
+			<p>
+				バイナリエントリの追加は、選択されているバイナリエントリ(青色のバイナリエントリ)の1つ下に作成されます。
+			</p>
+		</div>
+		<div class="tip">
+			<p class="tip-title">
+				💡ヒント
+			</p>
+			<p>
+				追加の順番を間違えた場合は、右側にある操作盤の<code class="inline">移動</code>で、選択中のバイナリエントリを移動できます。<br>
+				また、間違った型のバイナリエントリを追加した場合は、そのバイナリエントリをクリックして選択し、操作盤の<code class="inline">削除</code>を押すと消せます。
+			</p>
+		</div>
+		<p>
+			以下のようになれば問題ありません。
+		</p>
+		<p class="img-block">
+			<img class="content-img" src="../images/tutorial_create_1.png">
+		</p>
+		<div class="error">
+			<p class="error-title">
+				✖ 注意
+			</p>
+			<p>
+				バイナリオーダーは全く同じでないと、想定しているものと違うファイルが生成されます。
+				バイナリエントリの数と各バイナリエントリの型が正しいか確認してください。
+			</p>
+		</div>
+		<br>
+		<p>
+			各バイナリエントリに値を入力します。
+			バイナリエントリをクリックして選択すると、青色になり、<code class="inline">Value</code>に値を入力できるようになります。
+		</p>
+		<p>
+			<code class="inline">byte</code>に<code class="inline">1</code>,<br>
+			<code class="inline">bool</code>に<code class="inline">false</code>,<br>
+			<code class="inline">int</code>に<code class="inline">3</code>,<br>
+			<code class="inline">ulong</code>に<code class="inline">17500</code>を指定します。<br>
+		</p>
+		<p class="img-block">
+			<img src="../images/tutorial_create_2.png">
+		</p>
+		<p>
+			値の入力ができたら、メニューバーの<code class="inline">ファイル(F)</code>にある<code class="inline">名前を付けて保存(A)</code>を選択し、任意の場所に保存します。<br>
+			とりあえず、ここでは<code class="inline">tutorial.bin</code>と名前を付けて保存しましょう。
+		</p>
+		<p class="img-block">
+			<img src="../images/tutorial_create_3.png">
+		</p>
+		<br>
+		<p>
+			このように、バイナリファイルの生成は、バイナリオーダーを作成 → バイナリエントリに値を入力 → ファイルを保存 の流れで行うことができます。
+		</p>
+		<div class="rel-page">
+			<ul class="next-page">
+				<li><a href="tutorial_open_binary_file.html">バイナリファイルの読み込み</a></li>
+			</ul>
+			<ul class="prev-page">
+				<li><a href="tutorial.html">チュートリアル</a></li>
+			</ul>
+		</div>
+	</main>
+</body>
+</html>

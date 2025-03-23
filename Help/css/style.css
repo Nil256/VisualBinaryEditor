@@ -68,6 +68,40 @@ h3 {
 	margin: 1em 0 0.5em;
 }
 
+p.note {
+	padding: 0.5em 0 0.75em 2em;
+	font-style: italic;
+	color: #777;
+}
+
+.tip {
+	background-color: #fafac0;
+	padding: 0.5em;
+	border-radius: 7px;
+	margin: 0.5em 0;
+}
+.tip-title {
+	padding-bottom: 0.25em;
+	border-bottom: 1px solid #e5e5a0;
+	margin-bottom: 0.25em;
+}
+
+.error {
+	background-color: #fac0c0;
+	padding: 0.5em;
+	border-radius: 7px;
+	margin: 0.5em 0;
+}
+.error-title {
+	padding-bottom: 0.25em;
+	border-bottom: 1px solid #e5a0a0;
+	margin-bottom: 0.25em;
+}
+
+.code-block {
+	display: block;
+	margin: 0.5em 0;
+}
 pre.code {
 	display: inline-block;
 	background-color: #f0f0f0;
@@ -75,30 +109,42 @@ pre.code {
 	border-radius: 7px;
 }
 
+code.inline {
+	display: inline-block;
+	background-color: #f0f0f0;
+	padding: 0.25em;
+	border-radius: 3px;
+}
+
+.img-block {
+	margin: 0.5em 0;
+}
+.img-block > img {
+	max-width: 100%;
+}
+
 a.external::after {
 	display: inline-block;
-	content: "";
 	width: 1em;
 	height: 1em;
 	background-image: url('../images/external_link.png');
 	background-size: contain;
+	content: "";
 	vertical-align: middle;
 }
 
-.content-img {
-	max-width: 100%;
-}
-
-.prev-page {
+.rel-page {
 	margin: 3em 0 1.5em 1em;
 }
-.prev-page > p::before {
-	content: "↩";
+.rel-page > ul {
+	list-style: none;
 }
-
-.next-page {
-	margin: 3em 0 1.5em 1em;
+.rel-page > ul {
+	margin-bottom: 1em;
 }
-.next-page > p::before {
-	content: "→";
+.next-page > li::before {
+	content: "→ ";
+}
+.prev-page > li::before {
+	content: "↩ ";
 }
