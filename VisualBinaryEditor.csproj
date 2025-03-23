@@ -45,6 +45,7 @@
   <ItemGroup>
     <Folder Include="Help\images\" />
     <Folder Include="Help\css\" />
+    <Folder Include="Help\html\" />
   </ItemGroup>
 
 </Project>

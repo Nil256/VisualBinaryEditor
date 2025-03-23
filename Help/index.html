@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/style.css">
-	<title>Visual Binary Editorへようこそ</title>
+	<title>Visual Binary Editor 説明書 - Visual Binary Editorへようこそ</title>
 </head>
 <body>
 	<header>
@@ -16,14 +16,90 @@
 	<nav>
 		<h5>目次</h5>
 		<ul>
-			<li><b>Visual Binary Editorへようこそ</b></li>
+			<li>
+				<details open>
+					<summary>
+						<b>Visual Binary Editorへようこそ</b>
+					</summary>
+					<ul>
+						<li><a href="html/how_to_read.html">画面の見方</a></li>
+					</ul>
+				</details>
+			</li>
+			<li>
+				<details>
+					<summary>
+						<a href="html/tutorial.html">チュートリアル</a>
+					</summary>
+					<ul>
+						<li><a href="html/tutorial_create_binary_file.html">バイナリファイルの作成</a></li>
+						<li><a href="html/tutorial_open_binary_file.html">バイナリファイルの読み込み</a></li>
+					</ul>
+				</details>
+			</li>
 		</ul>
 	</nav>
 	<main>
 		<h2>Visual Binary Editorへようこそ</h2>
 		<p>
-			Visual Binary Editorとは、<a href="https://learn.microsoft.com/ja-jp/dotnet/api/system.io.binaryreader?view=net-8.0" target="_blank" rel="noopener noreferrer">System.IO.BinaryReader</a>, <a href="https://learn.microsoft.com/ja-jp/dotnet/api/system.io.binarywriter?view=net-8.0" target="_blank" rel="noopener noreferrer">System.IO.BinaryWriter</a>によるバイナリファイルの読み込み、編集、生成を視覚的に行うことを目的としたソフトウェアです。
+			Visual Binary Editorとは、<a class="external" href="https://learn.microsoft.com/ja-jp/dotnet/api/system.io.binaryreader?view=net-8.0" target="_blank" rel="noopener noreferrer">System.IO.BinaryReader</a>, <a class="external" href="https://learn.microsoft.com/ja-jp/dotnet/api/system.io.binarywriter?view=net-8.0" target="_blank" rel="noopener noreferrer">System.IO.BinaryWriter</a>によるバイナリファイルの読み込み、編集、生成を視覚的に行うことを目的としたソフトウェアです。
 		</p>
+		<br>
+		<p>
+			例えば、
+		</p>
+		<pre class="code">
+			<code>
+byte save1;
+int save2;
+ulong save3;
+ushort save4;
+			</code>
+		</pre>
+		<p>
+			において
+		</p>
+		<p>
+			<pre class="code">
+				<code>
+using (BinaryReader reader = new BinaryReader(fileStream))
+{
+	save1 = reader.ReadByte();
+	save2 = reader.ReadInt32();
+	save3 = reader.ReadUInt64();
+	save4 = reader.ReadUInt16();
+}
+				</code>
+			</pre>
+			もしくは
+			<pre class="code">
+				<code>
+using (BinaryWriter writer = new BinaryWriter(fileStream))
+{
+	writer.Write(save1);
+	writer.Write(save2);
+	writer.Write(save3);
+	writer.Write(save4);
+}
+				</code>
+			</pre>
+		</p>
+		<p>
+			を実行したい場合、Visual Binary Editorでは以下のようになります。
+		</p>
+		<br>
+		<p>
+			<img src="images/screen_shot.png" alt="Visual Binary Editorの画面">
+		</p>
+		<br>
+		<p>
+			詳しい操作方法に関しては<a href="html/tutorial.html">チュートリアル</a>を参照してください。
+		</p>
+		<div class="next-page">
+			<p>
+				<a href="html/how_to_read.html">画面の見方</a>
+			</p>
+		</div>
 	</main>
 </body>
 </html>

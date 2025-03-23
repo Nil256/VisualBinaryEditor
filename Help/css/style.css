@@ -37,7 +37,17 @@ nav {
 }
 
 nav > ul {
-	padding: 0.5em 0 0.5em 1.5em;
+	padding: 0.5em 0 0 0.5em;
+	list-style: none;
+}
+
+li > details {
+	margin-bottom: 0.25em;
+}
+
+details > ul {
+	padding-left: 2em;
+	list-style: disc;
 }
 
 main {
@@ -52,4 +62,43 @@ h2 {
 	padding-bottom: 0.1em;
 	border-bottom: 1px solid #ddd;
 	margin-bottom: 0.5em;
+}
+
+h3 {
+	margin: 1em 0 0.5em;
+}
+
+pre.code {
+	display: inline-block;
+	background-color: #f0f0f0;
+	padding: 0 1em;
+	border-radius: 7px;
+}
+
+a.external::after {
+	display: inline-block;
+	content: "";
+	width: 1em;
+	height: 1em;
+	background-image: url('../images/external_link.png');
+	background-size: contain;
+	vertical-align: middle;
+}
+
+.content-img {
+	max-width: 100%;
+}
+
+.prev-page {
+	margin: 3em 0 1.5em 1em;
+}
+.prev-page > p::before {
+	content: "↩";
+}
+
+.next-page {
+	margin: 3em 0 1.5em 1em;
+}
+.next-page > p::before {
+	content: "→";
 }
