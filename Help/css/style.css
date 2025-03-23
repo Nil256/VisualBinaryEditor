@@ -74,6 +74,18 @@ p.note {
 	color: #777;
 }
 
+.info {
+	background-color: #c0c0fa;
+	padding: 0.5em;
+	border-radius: 7px;
+	margin: 0.5em 0;
+}
+.info-title {
+	padding-bottom: 0.25em;
+	border-bottom: 1px solid #a0a0e5;
+	margin-bottom: 0.25em;
+}
+
 .tip {
 	background-color: #fafac0;
 	padding: 0.5em;

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/style.css">
+	<title>Visual Binary Editor 説明書 - バイナリファイルの読み込み</title>
+</head>
+<body>
+	<header>
+		<h1>
+			<img class="icon" src="../images/icon256.png" alt="Visual Binary Editorのアイコン">
+			Visual Binary Editor
+		</h1>
+	</header>
+	<nav>
+		<h5>目次</h5>
+		<ul>
+			<li>
+				<details>
+					<summary>
+						<a href="../index.html">Visual Binary Editorへようこそ</a>
+					</summary>
+					<ul>
+						<li><a href="how_to_read.html">画面の見方</a></li>
+					</ul>
+				</details>
+			</li>
+			<li>
+				<details open>
+					<summary>
+						<a href="tutorial.html">チュートリアル</a>
+					</summary>
+					<ul>
+						<li><a href="tutorial_create_binary_file.html">バイナリファイルの作成</a></li>
+						<li><b>バイナリファイルの読み込み</b></li>
+						<li><a href="tutorial_edit_binary_file.html">バイナリファイルの編集</a></li>
+					</ul>
+				</details>
+			</li>
+		</ul>
+	</nav>
+	<main>
+		<h2>チュートリアル: バイナリファイルの読み込み</h2>
+		<p>
+			<a href="tutorial_create_binary_file.html">チュートリアル: バイナリファイルの作成</a>で作成した<code class="inline">tutorial.bin</code>を読み込みます。
+		</p>
+		<p>
+			以下のようなプログラムを実行してバイナリファイルを読み込むとします。
+		</p>
+		<div class="code-block">
+			<pre class="code">
+				<code>
+byte saveFileVersion;
+bool isCompleted;
+int stageID;
+ulong totalScore;
+
+// ... 
+
+using (BinaryReader reader = new BinaryReader(fileStream))
+{
+	saveFileVersion = reader.ReadByte();
+	isCompleted = reader.ReadBoolean();
+	stageID = reader.ReadInt32();
+	totalScore = reader.ReadUInt64();
+}
+				</code>
+			</pre>
+		</div>
+		<p>
+			Visual Binary Editorを起動し、右側の操作盤から<code class="inline">byte</code>, <code class="inline">bool</code>, <code class="inline">int</code>, <code class="inline">ulong</code>の順にボタンを押します。
+		</p>
+		<div class="info">
+			<p class="info-title">
+				ⓘ INFO
+			</p>
+			<p>
+				Visual Binary Editorでバイナリファイルを読み込むためには、先にバイナリオーダーを作成しておく必要があります。<br>
+				言い換えると、バイナリの構成が分かっているバイナリファイルである場合にのみ読み込むことが可能です。
+			</p>
+		</div>
+		<p>
+			以下のようになれば問題ありません。
+		</p>
+		<p class="img-block">
+			<img class="content-img" src="../images/tutorial_1.png">
+		</p>
+		<p>
+			バイナリオーダーを作成出来たら、メニューバーの<code class="inline">ファイル(F)</code>にある<code class="inline">開く(O)</code>を選択し、<code class="inline">tutorial.bin</code>を開きます。
+		</p>
+		<p class="img-block">
+			<img class="content-img" src="../images/tutorial_4.png">
+		</p>
+		<p>
+			以下のように読み込まれます。
+		</p>
+		<p class="img-block">
+			<img class="content-img" src="../images/tutorial_5.png">
+		</p>
+		<div class="tip">
+			<p class="tip-title">
+				💡ヒント
+			</p>
+			<p>
+				バイナリオーダーとバイナリファイルの構成が異なっている場合、<br>
+				「ファイルのデータよりバイナリエントリが多いです。現在のバイナリオーダーがファイルのバイナリの構成と異なっている可能性が高いです。」や<br>
+				「ファイルのデータよりバイナリエントリが少ないです。現在のバイナリオーダーがファイルのバイナリの構成と異なっている可能性があります。」といったダイアログが表示されます。<br>
+				その場合は、バイナリオーダーが間違っていないか確認してください。<br>
+				それでも同じようなダイアログが表示される場合、<code class="inline">tutorial.bin</code>の作成で間違っている可能性があります。
+			</p>
+		</div>
+		<div class="rel-page">
+			<ul class="next-page">
+				<li><a href="tutorial_edit_binary_file.html">バイナリファイルの編集</a></li>
+			</ul>
+			<ul class="prev-page">
+				<li><a href="tutorial_create_binary_file.html">バイナリファイルの作成</a></li>
+				<li><a href="tutorial.html">チュートリアル</a></li>
+			</ul>
+		</div>
+	</main>
+</body>
+</html>
