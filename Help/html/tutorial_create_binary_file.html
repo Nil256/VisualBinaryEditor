@@ -12,6 +12,7 @@
 			<img class="icon" src="../images/icon256.png" alt="Visual Binary Editorのアイコン">
 			Visual Binary Editor
 		</h1>
+		<div class="version"></div>
 	</header>
 	<nav>
 		<h5>目次</h5>
@@ -34,7 +35,6 @@
 					<ul>
 						<li><b>バイナリファイルの作成</b></li>
 						<li><a href="tutorial_open_binary_file.html">バイナリファイルの読み込み</a></li>
-						<li><a href="tutorial_edit_binary_file.html">バイナリファイルの編集</a></li>
 					</ul>
 				</details>
 			</li>
@@ -114,6 +114,15 @@ using (BinaryWriter writer = new BinaryWriter(fileStream))
 		<p class="img-block">
 			<img src="../images/tutorial_2.png">
 		</p>
+		<div class="tip">
+			<p class="tip-title">
+				💡ヒント
+			</p>
+			<p>
+				<code class="inline">Name</code>欄は、各値が何を表しているのか示すためのメモ欄です。出力するバイナリファイルには影響しません。
+			</p>
+		</div>
+		<br>
 		<p>
 			値の入力ができたら、メニューバーの<code class="inline">ファイル(F)</code>にある<code class="inline">名前を付けて保存(A)</code>を選択し、任意の場所に保存します。<br>
 			とりあえず、ここでは<code class="inline">tutorial.bin</code>と名前を付けて保存しましょう。
