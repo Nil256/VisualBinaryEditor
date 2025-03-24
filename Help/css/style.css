@@ -137,6 +137,20 @@ code.inline {
 	border-radius: 3px;
 }
 
+ul.simple-list {
+	list-style: none;
+	margin-bottom: 0.5em;
+}
+.simple-list > li {
+	margin-bottom: 0.25em;
+}
+.list-title {
+	font-weight: bold;
+}
+.list-desc {
+	padding-left: 0.5em;
+}
+
 .img-block {
 	margin: 0.5em 0;
 }
