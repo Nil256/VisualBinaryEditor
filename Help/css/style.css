@@ -77,6 +77,10 @@ h3 {
 	margin: 1em 0 0.5em;
 }
 
+hr.split {
+	margin: 1.5em 0 2em;
+}
+
 p.note {
 	padding: 0.5em 0 0.75em 2em;
 	font-style: italic;
@@ -128,6 +132,9 @@ pre.code {
 	background-color: #f0f0f0;
 	padding: 0 1em;
 	border-radius: 7px;
+}
+.code-block > .code {
+	display: block;
 }
 
 code.inline {

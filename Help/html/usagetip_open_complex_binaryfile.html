@@ -45,7 +45,7 @@
 					</summary>
 					<ul>
 						<li><a href="usagetip_shortcut_keys.html">ショートカットキー</a></li>
-						<li><a href="usagetip_open_complex_binaryfile.html">複雑なバイナリファイルを開く</a></li>
+						<li><b>複雑なバイナリファイルを開く</b></li>
 					</ul>
 				</details>
 			</li>
@@ -53,88 +53,233 @@
 	</nav>
 	<main>
 		<h2>ヒント: 複雑なバイナリファイルを開く</h2>
-		<!--
-		ページを読む上での注意書き
-		<p class="note">
-		</p>
-		-->
-
-		<!--
-		通常の文章
 		<p>
+			全てのバイナリファイルが、一定の構成で保存されるとは限りません。<br>
+			ソフトウェアが保存するバイナリファイルは、そのソフトがアップデートされた時に構成が変わる可能性があります。
 		</p>
-		-->
-
-		<!--
-		inlineコード <p>タグ内で使用する
-		<code class="inline"></code>
-		-->
-
-		<!--
-		画像挿入
-		<p class="img-block">
-			<img class="content-img" src="../images/">
+		<h3>条件分岐のあるバイナリファイル</h3>
+		<p>
+			例えば次のような読み込み方であるとします。
 		</p>
-		-->
-
-		<!--
-		コードをblockとして書く場合、inline-blockの場合は<div>タグではなく、<p>タグ内に入れる
 		<div class="code-block">
 			<pre class="code">
 				<code>
-// コード
+private ulong highScore;
+private ulong totalScore;
+
+// ...
+
+private void ReadFromSaveFile(in string filePath)
+{
+	// ...
+
+	using (BinaryReader reader = new BinaryReader(fileStream))
+	{
+		byte fileVersion = reader.ReadByte();
+		switch (fileVersion)
+		{
+			case 0:
+				LoadFileVersion0(reader);
+				break;
+			case 1:
+				LoadFileVersion1(reader);
+				break;
+			default:
+				throw new FileFormatException();
+				break;
+		}
+	}
+}
+
+private void LoadFileVersion0(in BinaryReader reader)
+{
+	highScore = Math.Max(0, reader.ReadInt32());
+	totalScore = Math.Max(0, reader.ReadInt32());
+}
+
+private void LoadFileVersion1(in BinaryReader reader)
+{
+	highScore = reader.ReadUInt64();
+	totalScore = reader.ReadUInt64();
+}
 				</code>
 			</pre>
 		</div>
-		-->
+		<p>
+			このように<code class="inline">if</code>や<code class="inline">switch</code>などによる条件分岐によって読み込み方が異なる場合は、まず条件分岐の直前まで読み込みます。<br>
+			今回の例であれば、まず<code class="inline">byte</code>型のバイナリエントリのみを追加してファイルを開きます。
+		</p>
+		<p class="img-block">
+			<img class="content-img" src="../images/usagetip_complex1.png">
+		</p>
+		<p>
+			開くと、以下のような注意のダイアログが表示されますが、問題ありません。
+		</p>
+		<p class="img-block">
+			<img class="content-img" src="../images/usagetip_complex2.png">
+		</p>
+		<p>
+			読み込んだ結果、<code class="inline">fileVersion</code>が<code class="inline">1</code>であると分かったので、<code class="inline">ulong</code>のバイナリエントリを2個追加して、再読み込みします。
+		</p>
+		<p class="img-block">
+			<img class="content-img" src="../images/usagetip_complex3.png">
+		</p>
+		<p class="img-block">
+			<img class="content-img" src="../images/usagetip_complex4.png">
+		</p>
+		<hr class="split">
 
-		<!--
-		情報ダイアログ
-		<div class="info">
-			<p class="info-title">
-				ⓘ INFO
-			</p>
-			<p>
-				情報だよ
-			</p>
+		<h3>可変長のバイナリファイル ①</h3>
+		<p>
+			上記の手法は、<code class="inline">if</code>や<code class="inline">switch</code>以外でも用いることができます。<br>
+			次の例では<code class="inline">for</code>の繰り返しで読み込んでいる場合です。
+		</p>
+		<div class="code-block">
+			<pre class="code">
+				<code>
+/*
+internal class Box
+{
+	internal byte Type { get; init; }
+	internal int X { get; init; }
+	internal int Y { get; init; }
+
+	internal Box(in byte type, in int x, in int y)
+	// ...
+}
+*/
+
+private List&lt;Box&gt; ReadFromSaveFile(in string filePath)
+{
+	List&lt;Box&gt; boxes = new List&lt;Box&gt;();
+
+	// ...
+
+	using (BinaryReader reader = new BinaryReader(fileStream))
+	{
+		int count = reader.ReadInt32();
+		for (var i = 0; i < count; i++)
+		{
+			byte type = reader.ReadByte();
+			int x = reader.ReadInt32();
+			int y = reader.ReadInt32();
+			Box box = new Box(type, x, y);
+			boxes.Add(box);
+		}
+	}
+
+	// ...
+
+	return boxes;
+}
+				</code>
+			</pre>
 		</div>
-		-->
-		<!--
-		ヒントダイアログ
-		<div class="tip">
-			<p class="tip-title">
-				💡ヒント
-			</p>
-			<p>
-				ヒントだよ
-			</p>
+		<p>
+			このように要素数が保存されている場合は、初めに要素数のみを読み込みます。<br>
+			今回の例では、<code class="inline">int</code>型のバイナリエントリのみを追加してファイルを開きます。
+		</p>
+		<p class="img-block">
+			<img class="content-img" src="../images/usagetip_complex5.png">
+		</p>
+		<p>
+			<code class="inline">count</code>が<code class="inline">5</code>であることから、<code class="inline">byte</code>, <code class="inline">int</code>, <code class="inline">int</code>が5回繰り返されることが分かります。<br>
+			<code class="inline">byte</code>, <code class="inline">int</code>, <code class="inline">int</code>の並びを5回追加して再読み込みします。
+		</p>
+		<p class="img-block">
+			<img class="content-img" src="../images/usagetip_complex6.png">
+		</p>
+		<hr class="split">
+
+		<h3>可変長のバイナリファイル ②</h3>
+		<p>
+			上記の手法は、繰り返される要素の数が保存されている場合にのみ用いることができます。<br>
+			要素の数が保存されていなくとも、繰り返しの終わりを意味する数が保存されていれば読み込むことは可能です。
+		</p>
+		<div class="code-block">
+			<pre class="code">
+				<code>
+/*
+internal enum ShapeType : byte
+{
+	Circle,
+	Square,
+	Triangle,
+	EndLoad = 255
+}
+
+internal class Shape
+{
+	internal ShapeType Type { get; init; }
+	internal int X { get; init; }
+	internal int Y { get; init; }
+
+	internal Shape(in ShapeType type, in int x, in int y)
+	// ...
+}
+*/
+
+private List&lt;Shape&gt; ReadFromSaveFile(in string filePath)
+{
+	List&lt;Shape&gt; shapes = new List&lt;Shape&gt;();
+
+	// ...
+
+	using (BinaryReader reader = new BinaryReader(fileStream))
+	{
+		while (true)
+		{
+			ShapeType type = (ShapeType)reader.ReadByte();
+			if (type == ShapeType.EndLoad)
+			{
+				break;
+			}
+			int x = reader.ReadInt32();
+			int y = reader.ReadInt32();
+			Shape shape = new Shape(type, x, y);
+			shapes.Add(shape);
+		}
+	}
+
+	// ...
+
+	return shapes;
+}
+				</code>
+			</pre>
 		</div>
-		-->
-		<!--
-		注意ダイアログ
-		<div class="error">
-			<p class="error-title">
-				✖ 注意
-			</p>
-			<p>
-				注意だよ
-			</p>
-		</div>
-		-->
-		<!-- 関連ページ -->
+		<p>
+			この場合は、繰り返しの要素を順々に読み込んでいきます。<br>
+			今回の例であれば、まず<code class="inline">byte</code>型のバイナリエントリのみを追加してファイルを開きます。
+		</p>
+		<p class="img-block">
+			<img class="content-img" src="../images/usagetip_complex1.png">
+		</p>
+		<p class="img-block">
+			<img class="content-img" src="../images/usagetip_complex7.png">
+		</p>
+		<p>
+			読み込むと、<code class="inline">0</code>だったので、さらに読み込むことができます。<br>
+			<code class="inline">X</code>, <code class="inline">Y</code>用の<code class="inline">int</code>型を2つ、さらに読み込めるか確認するために<code class="inline">byte</code>型を1つ追加して再読み込みます。
+		</p>
+		<p class="img-block">
+			<img class="content-img" src="../images/usagetip_complex8.png">
+		</p>
+		<p>
+			読み込むと、<code class="inline">1</code>だったので、さらに読み込むことができます。<br>
+			これを終了を表す数値(今回の例では<code class="inline">255</code>)になるまで繰り返します。
+		</p>
+		<p class="img-block">
+			<img class="content-img" src="../images/usagetip_complex9.png">
+		</p>
+		<hr class="split">
+		<p>
+			このように条件分岐や繰り返しがある場合は、プログラムを辿るように読み込むことで正しくバイナリファイルを読み取ることができます。
+		</p>
 		<div class="rel-page">
-			<!--
-			子/次ページ
-			<ul class="next-page">
-				<li><a href=".html"></a></li>
-			</ul>
-			-->
-			<!--
-			親/前ページ
 			<ul class="prev-page">
-				<li><a href=".html"></a></li>
+				<li><a href="usagetip.html">使い方のヒント</a></li>
 			</ul>
-			-->
 		</div>
 	</main>
 </body>
