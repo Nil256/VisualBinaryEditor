@@ -215,63 +215,63 @@ namespace VisualBinaryEditor
             // editEntryAddByteToolStripMenuItem
             // 
             editEntryAddByteToolStripMenuItem.Name = "editEntryAddByteToolStripMenuItem";
-            editEntryAddByteToolStripMenuItem.Size = new Size(224, 26);
+            editEntryAddByteToolStripMenuItem.Size = new Size(133, 26);
             editEntryAddByteToolStripMenuItem.Text = "byte";
             editEntryAddByteToolStripMenuItem.Click += editEntryAddByteToolStripMenuItem_Click;
             // 
             // editEntryAddSbyteToolStripMenuItem
             // 
             editEntryAddSbyteToolStripMenuItem.Name = "editEntryAddSbyteToolStripMenuItem";
-            editEntryAddSbyteToolStripMenuItem.Size = new Size(224, 26);
+            editEntryAddSbyteToolStripMenuItem.Size = new Size(133, 26);
             editEntryAddSbyteToolStripMenuItem.Text = "sbyte";
             editEntryAddSbyteToolStripMenuItem.Click += editEntryAddSbyteToolStripMenuItem_Click;
             // 
             // editEntryAddShortToolStripMenuItem
             // 
             editEntryAddShortToolStripMenuItem.Name = "editEntryAddShortToolStripMenuItem";
-            editEntryAddShortToolStripMenuItem.Size = new Size(224, 26);
+            editEntryAddShortToolStripMenuItem.Size = new Size(133, 26);
             editEntryAddShortToolStripMenuItem.Text = "short";
             editEntryAddShortToolStripMenuItem.Click += editEntryAddShortToolStripMenuItem_Click;
             // 
             // editEntryAddUshortToolStripMenuItem
             // 
             editEntryAddUshortToolStripMenuItem.Name = "editEntryAddUshortToolStripMenuItem";
-            editEntryAddUshortToolStripMenuItem.Size = new Size(224, 26);
+            editEntryAddUshortToolStripMenuItem.Size = new Size(133, 26);
             editEntryAddUshortToolStripMenuItem.Text = "ushort";
             editEntryAddUshortToolStripMenuItem.Click += editEntryAddUshortToolStripMenuItem_Click;
             // 
             // editEntryAddIntToolStripMenuItem
             // 
             editEntryAddIntToolStripMenuItem.Name = "editEntryAddIntToolStripMenuItem";
-            editEntryAddIntToolStripMenuItem.Size = new Size(224, 26);
+            editEntryAddIntToolStripMenuItem.Size = new Size(133, 26);
             editEntryAddIntToolStripMenuItem.Text = "int";
             editEntryAddIntToolStripMenuItem.Click += editEntryAddIntToolStripMenuItem_Click;
             // 
             // editEntryAddUintToolStripMenuItem
             // 
             editEntryAddUintToolStripMenuItem.Name = "editEntryAddUintToolStripMenuItem";
-            editEntryAddUintToolStripMenuItem.Size = new Size(224, 26);
+            editEntryAddUintToolStripMenuItem.Size = new Size(133, 26);
             editEntryAddUintToolStripMenuItem.Text = "uint";
             editEntryAddUintToolStripMenuItem.Click += editEntryAddUintToolStripMenuItem_Click;
             // 
             // editEntryAddLongToolStripMenuItem
             // 
             editEntryAddLongToolStripMenuItem.Name = "editEntryAddLongToolStripMenuItem";
-            editEntryAddLongToolStripMenuItem.Size = new Size(224, 26);
+            editEntryAddLongToolStripMenuItem.Size = new Size(133, 26);
             editEntryAddLongToolStripMenuItem.Text = "long";
             editEntryAddLongToolStripMenuItem.Click += editEntryAddLongToolStripMenuItem_Click;
             // 
             // editEntryAddUlongToolStripMenuItem
             // 
             editEntryAddUlongToolStripMenuItem.Name = "editEntryAddUlongToolStripMenuItem";
-            editEntryAddUlongToolStripMenuItem.Size = new Size(224, 26);
+            editEntryAddUlongToolStripMenuItem.Size = new Size(133, 26);
             editEntryAddUlongToolStripMenuItem.Text = "ulong";
             editEntryAddUlongToolStripMenuItem.Click += editEntryAddUlongToolStripMenuItem_Click;
             // 
             // editEntryAddBoolToolStripMenuItem
             // 
             editEntryAddBoolToolStripMenuItem.Name = "editEntryAddBoolToolStripMenuItem";
-            editEntryAddBoolToolStripMenuItem.Size = new Size(224, 26);
+            editEntryAddBoolToolStripMenuItem.Size = new Size(133, 26);
             editEntryAddBoolToolStripMenuItem.Text = "bool";
             editEntryAddBoolToolStripMenuItem.Click += editEntryAddBoolToolStripMenuItem_Click;
             // 
@@ -285,28 +285,28 @@ namespace VisualBinaryEditor
             // editEntryMoveTopToolStripMenuItem
             // 
             editEntryMoveTopToolStripMenuItem.Name = "editEntryMoveTopToolStripMenuItem";
-            editEntryMoveTopToolStripMenuItem.Size = new Size(224, 26);
+            editEntryMoveTopToolStripMenuItem.Size = new Size(198, 26);
             editEntryMoveTopToolStripMenuItem.Text = "一番上に移動(&T)";
             editEntryMoveTopToolStripMenuItem.Click += editEntryMoveTopToolStripMenuItem_Click;
             // 
             // editEntryMoveUpToolStripMenuItem
             // 
             editEntryMoveUpToolStripMenuItem.Name = "editEntryMoveUpToolStripMenuItem";
-            editEntryMoveUpToolStripMenuItem.Size = new Size(224, 26);
+            editEntryMoveUpToolStripMenuItem.Size = new Size(198, 26);
             editEntryMoveUpToolStripMenuItem.Text = "上に移動(&U)";
             editEntryMoveUpToolStripMenuItem.Click += editEntryMoveUpToolStripMenuItem_Click;
             // 
             // editEntryMoveDownToolStripMenuItem
             // 
             editEntryMoveDownToolStripMenuItem.Name = "editEntryMoveDownToolStripMenuItem";
-            editEntryMoveDownToolStripMenuItem.Size = new Size(224, 26);
+            editEntryMoveDownToolStripMenuItem.Size = new Size(198, 26);
             editEntryMoveDownToolStripMenuItem.Text = "下に移動(&D)";
             editEntryMoveDownToolStripMenuItem.Click += editEntryMoveDownToolStripMenuItem_Click;
             // 
             // editEntryMoveBottomToolStripMenuItem
             // 
             editEntryMoveBottomToolStripMenuItem.Name = "editEntryMoveBottomToolStripMenuItem";
-            editEntryMoveBottomToolStripMenuItem.Size = new Size(224, 26);
+            editEntryMoveBottomToolStripMenuItem.Size = new Size(198, 26);
             editEntryMoveBottomToolStripMenuItem.Text = "一番下に移動(&B)";
             editEntryMoveBottomToolStripMenuItem.Click += editEntryMoveBottomToolStripMenuItem_Click;
             // 
@@ -357,7 +357,7 @@ namespace VisualBinaryEditor
             helpHowToUseToolStripMenuItem.Image = (Image)resources.GetObject("helpHowToUseToolStripMenuItem.Image");
             helpHowToUseToolStripMenuItem.Name = "helpHowToUseToolStripMenuItem";
             helpHowToUseToolStripMenuItem.Size = new Size(291, 26);
-            helpHowToUseToolStripMenuItem.Text = "使い方を確認(&H)";
+            helpHowToUseToolStripMenuItem.Text = "ドキュメントを開く(&H)";
             helpHowToUseToolStripMenuItem.Click += helpHowToUseToolStripMenuItem_Click;
             // 
             // toolStripSeparator4
