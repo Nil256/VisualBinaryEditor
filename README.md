@@ -2,6 +2,8 @@
 
 [System.IO.BinaryReader](https://learn.microsoft.com/ja-jp/dotnet/api/system.io.binaryreader?view=net-8.0), [System.IO.BinaryWriter](https://learn.microsoft.com/ja-jp/dotnet/api/system.io.binarywriter?view=net-8.0)によるバイナリファイルの読み込み、編集、生成を視覚的に行うことを目的としたソフトウェアです。
 
+![Screen Shot](/Documentation/images/screen_shot.png)
+
 ## 機能
 
 バイナリファイルの読み込み、編集、生成ができます。
@@ -30,3 +32,4 @@
 ## 将来的な機能
 
 - バイナリオーダーの保存、読み込み
+- バイナリエントリにコンテキストメニュー(右クリックで出てくるメニュー)を追加
