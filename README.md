@@ -27,7 +27,8 @@
 
 注意: 現在、正式リリースは無く、まだプレリリースのみあります。
 
-ダウンロードは[Releases](https://github.com/Nil256/VisualBinaryEditor/releases)からできます。
+ダウンロードは[BOOTH](https://nil256.booth.pm/items/6738510)からできます。
+(もちろんReleasesからもできます。)
 
 ## 将来的な機能
 
